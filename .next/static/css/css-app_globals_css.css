@@ -1,0 +1,292 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/* ============================================================
+   LEX INDIA — Global Styles
+   Legal-grade design system with dark/light theme support
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  /* Gold palette */
+  --gold-primary:  #C9A84C;
+  --gold-dark:     #8B6914;
+  --gold-light:    #F0D060;
+  --gold-muted:    rgba(201, 168, 76, 0.15);
+
+  /* Dark theme backgrounds */
+  --dark-bg:       #050D1A;
+  --dark-surface:  #080F1E;
+  --dark-elevated: #0A1628;
+  --dark-border:   rgba(201, 168, 76, 0.12);
+
+  /* Light theme backgrounds */
+  --light-bg:      #F8F6F0;
+  --light-surface: #FFFFFF;
+  --light-elevated:#EDE9DC;
+  --light-border:  rgba(201, 168, 76, 0.2);
+
+  /* Typography */
+  --font-heading:  'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:     'Crimson Text', Georgia, 'Times New Roman', serif;
+
+  /* Semantic colors */
+  --criminal:  #EF4444;
+  --civil:     #10B981;
+  --corporate: #3B82F6;
+  --family:    #EC4899;
+  --property:  #6366F1;
+  --constitutional: #8B5CF6;
+}
+
+/* ── Theme Tokens ── */
+/* These are the semantic variables every page/component should use.
+   They automatically switch when data-theme changes on <html>. */
+
+[data-theme="light"] {
+  --bg-primary:      #F8F6F0;
+  --bg-secondary:    #FFFFFF;
+  --bg-elevated:     #EDE9DC;
+  --text-primary:    #0A0A0A;
+  --text-secondary:  rgba(0, 0, 0, 0.65);
+  --text-muted:      rgba(0, 0, 0, 0.38);
+  --border-color:    rgba(201, 168, 76, 0.2);
+  --card-bg:         #FFFFFF;
+  --nav-bg:          rgba(248, 246, 240, 0.96);
+  --scrollbar-track: #F8F6F0;
+}
+
+[data-theme="dark"] {
+  --bg-primary:      #050D1A;
+  --bg-secondary:    #080F1E;
+  --bg-elevated:     #0A1628;
+  --text-primary:    #FFFFFF;
+  --text-secondary:  rgba(255, 255, 255, 0.72);
+  --text-muted:      rgba(255, 255, 255, 0.38);
+  --border-color:    rgba(201, 168, 76, 0.12);
+  --card-bg:         #080F1E;
+  --nav-bg:          rgba(5, 13, 26, 0.96);
+  --scrollbar-track: #050D1A;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Hide default cursor — custom cursor takes over */
+  cursor: none;
+  overflow-x: hidden;
+  /* Theme-aware background and text — switches automatically */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Restore cursor for inputs */
+input, textarea, select {
+  cursor: text;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track, var(--dark-bg)); }
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.7);
+}
+
+/* ── Typography Defaults ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+p { line-height: 1.7; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+button { cursor: none; }
+
+/* ── Loading Screen Animations ── */
+@keyframes scaleUpY {
+  from { transform: scaleY(0); transform-origin: bottom center; }
+  to   { transform: scaleY(1); }
+}
+
+@keyframes shimmerSlide {
+  from { transform: translateX(-200%); }
+  to   { transform: translateX(200%); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Cursor Animations ── */
+@keyframes cursorPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.5); }
+  50%       { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); }
+}
+
+@keyframes cursorSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Hero Pulse ── */
+@keyframes heroPulse {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.6; }
+  50%       { transform: translateY(-50%) scale(1.03); opacity: 0.8; }
+}
+
+/* ── Card hover lift (utility) ── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Gradient text utility ── */
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-light), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section divider ── */
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-primary), transparent);
+  margin: 16px auto;
+}
+
+/* ── Tag badge ── */
+.tag-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: var(--font-body);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* ── Form inputs ── */
+.lex-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.lex-input:focus {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+/* ── Button base ── */
+.lex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: none;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.lex-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+}
+.lex-btn-primary {
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  color: #050D1A;
+}
+.lex-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  color: var(--gold-primary);
+}
+
+/* ── Responsive grid utilities ── */
+.responsive-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .responsive-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .responsive-grid-3 { grid-template-columns: 1fr; }
+}
+
+.responsive-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  gap: 20px;
+}
+@media (max-width: 1000px) {
+  .responsive-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .responsive-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* ── Mobile nav hidden by default ── */
+@media (min-width: 901px) {
+  .mobile-menu { display: none !important; }
+  .mobile-menu-btn { display: none !important; }
+}
+@media (max-width: 900px) {
+  .desktop-nav-links { display: none !important; }
+}
+
+/* ── Print styles ── */
+@media print {
+  .lex-cursor, .lex-follower,
+  nav, .loading-screen { display: none !important; }
+}
