@@ -11,14 +11,14 @@ import { useTheme } from '@/hooks/useTheme';
 
 const STATS = [
   { value: '2,400+', label: 'Cases Won' },
-  { value: '15+',    label: 'Years Experience' },
-  { value: '180+',   label: 'Students Trained' },
-  { value: '98%',    label: 'Client Satisfaction' },
+  { value: '15+', label: 'Years Experience' },
+  { value: '180+', label: 'Students Trained' },
+  { value: '98%', label: 'Client Satisfaction' },
 ];
 
 export default function HeroSection() {
   const { theme } = useTheme();
-  const isDark    = theme === 'dark';
+  const isDark = theme === 'dark';
   const [ready, setReady] = useState(false);
 
   useEffect(() => { const t = setTimeout(() => setReady(true), 80); return () => clearTimeout(t); }, []);
@@ -104,8 +104,8 @@ export default function HeroSection() {
         <div style={{ ...fade(0.45), display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 80 }}>
           {[
             { label: 'For Law Students', icon: '📚', href: '/students', primary: true },
-            { label: 'Hire a Lawyer',    icon: '⚖️', href: '/services' },
-            { label: 'Our Law Firm',     icon: '🏛️', href: '/firm' },
+            { label: 'Hire a Lawyer', icon: '⚖️', href: '/services' },
+            { label: 'Our Law Firm', icon: '🏛️', href: '/firm' },
           ].map((cta) => (
             <Link
               key={cta.href}

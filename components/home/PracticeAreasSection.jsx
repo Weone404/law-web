@@ -8,12 +8,12 @@ import { useTheme } from '@/hooks/useTheme';
 import SectionHeader from '@/components/ui/SectionHeader';
 
 const AREAS = [
-  { icon: '⚖️', title: 'Criminal Law',       desc: 'Expert defence and prosecution across all criminal matters under BNS 2023.',   href: '/services' },
-  { icon: '🏛️', title: 'Constitutional Law',  desc: 'Fundamental rights, writ petitions, PIL, and Supreme Court matters.',           href: '/services' },
-  { icon: '🏢', title: 'Corporate Law',       desc: 'Company formation, M&A, SEBI, NCLT, and complex commercial disputes.',          href: '/services' },
-  { icon: '👨‍👩‍👧', title: 'Family Law',         desc: 'Divorce, custody, adoption, succession, and matrimonial disputes.',            href: '/services' },
-  { icon: '🏠', title: 'Property Law',        desc: 'Real estate disputes, title verification, RERA, and property registrations.',   href: '/services' },
-  { icon: '💼', title: 'Civil Litigation',    desc: 'Contract disputes, tort claims, injunctions, and civil court representation.',  href: '/services' },
+  { icon: '⚖️', title: 'Criminal Law', desc: 'Expert defence and prosecution across all criminal matters under BNS 2023.', href: '/services' },
+  { icon: '🏛️', title: 'Constitutional Law', desc: 'Fundamental rights, writ petitions, PIL, and Supreme Court matters.', href: '/services' },
+  { icon: '🏢', title: 'Corporate Law', desc: 'Company formation, M&A, SEBI, NCLT, and complex commercial disputes.', href: '/services' },
+  { icon: '👨‍👩‍👧', title: 'Family Law', desc: 'Divorce, custody, adoption, succession, and matrimonial disputes.', href: '/services' },
+  { icon: '🏠', title: 'Property Law', desc: 'Real estate disputes, title verification, RERA, and property registrations.', href: '/services' },
+  { icon: '💼', title: 'Civil Litigation', desc: 'Contract disputes, tort claims, injunctions, and civil court representation.', href: '/services' },
 ];
 
 export function PracticeAreasSection() {
