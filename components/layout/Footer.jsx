@@ -32,17 +32,17 @@ const COLUMNS = [
     links: [
       { label: 'Contact Us',      href: '/contact' },
       { label: 'Book Consultation', href: '/contact' },
-      { label: 'Privacy Policy',  href: '/' },
-      { label: 'Terms of Use',    href: '/' },
+      { label: 'Privacy Policy',  href: '/privacy-policy' },
+      { label: 'Terms of Use',    href: '/terms-of-use' },
     ],
   },
 ];
 
 const SOCIALS = [
-  { label: 'in',  title: 'LinkedIn' },
-  { label: 'tw',  title: 'Twitter/X' },
-  { label: 'yt',  title: 'YouTube' },
-  { label: 'tg',  title: 'Telegram' },
+  { label: 'in',  title: 'LinkedIn', href: 'https://www.linkedin.com/' },
+  { label: 'tw',  title: 'Twitter/X', href: 'https://twitter.com/' },
+  { label: 'yt',  title: 'YouTube', href: 'https://www.youtube.com/' },
+  { label: 'tg',  title: 'Telegram', href: 'https://telegram.org/' },
 ];
 
 export default function Footer() {
@@ -78,21 +78,29 @@ export default function Footer() {
             {/* Social icons */}
             <div style={{ display: 'flex', gap: 10 }}>
               {SOCIALS.map((s) => (
-                <button
+                <a
                   key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
                   title={s.title}
+                  aria-label={s.title}
                   style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     width: 36, height: 36, borderRadius: '50%',
                     border: '1px solid rgba(201,168,76,0.25)',
                     background: 'none', cursor: 'pointer',
                     color: 'rgba(201,168,76,0.6)',
                     fontSize: 10, fontFamily: 'var(--font-body)',
                     fontWeight: 700, letterSpacing: 0,
+                    textDecoration: 'none',
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--gold-primary)'; e.currentTarget.style.color = 'var(--gold-primary)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.25)'; e.currentTarget.style.color = 'rgba(201,168,76,0.6)'; }}
-                >{s.label.toUpperCase()}</button>
+                >{s.label.toUpperCase()}</a>
               ))}
             </div>
           </div>

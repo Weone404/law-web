@@ -25,12 +25,12 @@ export const metadata = {
   authors: [{ name: 'Lex India Law Chambers' }],
   creator: 'Lex India',
   publisher: 'Lex India Law Chambers',
-  metadataBase: new URL('https://lexindia.com'),
+  metadataBase: new URL('https://www.legalgroup.in'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://lexindia.com',
+    url: 'https://www.legalgroup.in',
     siteName: 'Lex India',
     title: 'Lex India — Justice · Knowledge · Integrity',
     description: "India's premier legal platform for students, lawyers & clients.",
@@ -45,9 +45,6 @@ export const metadata = {
   robots: {
     index: true, follow: true,
     googleBot: { index: true, follow: true },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 };
 
