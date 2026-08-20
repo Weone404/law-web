@@ -26,20 +26,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/services/page.js"
     ],
-    "/firm/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/firm/page.js"
+      "static/chunks/app/_not-found/page.js"
     ],
-    "/laws/page": [
+    "/students/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/laws/page.js"
+      "static/chunks/app/students/layout.js"
     ],
-    "/contact/page": [
+    "/services/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
+      "static/chunks/app/services/layout.js"
     ]
   }
 }

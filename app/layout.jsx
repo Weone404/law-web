@@ -9,11 +9,14 @@ import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/cursor/CustomCursor';
 import LoadingWrapper from '@/components/loading/LoadingWrapper';
+import JsonLd from '@/components/seo/JsonLd';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import { BRAND_NAME, ORGANIZATION_SCHEMA, SITE_URL } from '@/lib/seo';
 
 export const metadata = {
   title: {
-    default: 'Lex India — Premier Legal Platform',
-    template: '%s | Lex India',
+  default: 'Legal Services, Lawyers & Indian Law Resources | legalgroup',
+    template: '%s | legalgroup',
   },
   description:
     "India's leading legal technology platform for law students, practicing lawyers, and clients seeking expert legal services.",
@@ -22,23 +25,22 @@ export const metadata = {
     'case laws india', 'bare acts', 'advocate near me', 'lawyer consultation',
     'IPC', 'CrPC', 'constitution of india', 'supreme court india',
   ],
-  authors: [{ name: 'Lex India Law Chambers' }],
-  creator: 'Lex India',
-  publisher: 'Lex India Law Chambers',
-  metadataBase: new URL('https://www.legalgroup.in'),
-  alternates: { canonical: '/' },
+  authors: [{ name: 'legalgroup' }],
+  creator: 'legalgroup',
+  publisher: 'legalgroup',
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://www.legalgroup.in',
-    siteName: 'Lex India',
-    title: 'Lex India — Justice · Knowledge · Integrity',
+    url: SITE_URL,
+    siteName: BRAND_NAME,
+    title: 'Legal Services, Lawyers & Indian Law Resources | legalgroup',
     description: "India's premier legal platform for students, lawyers & clients.",
-    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'Lex India' }],
+    images: [{ url: '/images/og-image.jpg', width: 1200, height: 630, alt: 'legalgroup' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lex India — Legal Excellence',
+    title: 'legalgroup | Indian Legal Services and Law Resources',
     description: "India's premier legal platform.",
     images: ['/images/og-image.jpg'],
   },
@@ -60,7 +62,7 @@ export default function RootLayout({ children }) {
           __html: `
           (function() {
             try {
-              var saved = localStorage.getItem('lex-theme');
+              var saved = localStorage.getItem('lex-theme') || localStorage.getItem('lex_theme');
               var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
               var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
               document.documentElement.setAttribute('data-theme', theme);
@@ -79,6 +81,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
+        <JsonLd data={ORGANIZATION_SCHEMA} />
+        <BreadcrumbSchema />
         {/* Custom law-themed animated cursor */}
         <CustomCursor />
 

@@ -27,7 +27,7 @@ function LoadingScreen({ onDone }) {
       className="loading-screen"
       style={{
         position: 'fixed', inset: 0, zIndex: 99999,
-        background: '#050D1A',
+        background: 'var(--bg-primary)',
         display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center',
         opacity: phase === 2 ? 0 : 1,
@@ -88,7 +88,7 @@ function LoadingScreen({ onDone }) {
         color: '#C9A84C', letterSpacing: '0.18em',
         opacity: phase >= 1 ? 1 : 0, transform: phase >= 1 ? 'none' : 'translateY(12px)',
         transition: 'all 0.55s 0.55s',
-      }}>LEX INDIA</div>
+      }}>legalgroup</div>
 
       <div style={{
         marginTop: 8,

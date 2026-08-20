@@ -6,7 +6,7 @@
 export default function PageHeader({ eyebrow, title, subtitle }) {
   return (
     <div style={{
-      background: 'linear-gradient(135deg, #050D1A 0%, #0A1628 50%, #0D1F3C 100%)',
+      background: 'var(--dark-hero)',
       padding: '64px 24px 80px', position: 'relative', overflow: 'hidden',
     }}>
       <div style={{

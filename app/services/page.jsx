@@ -11,8 +11,9 @@ import LawyerCard from '@/components/ui/LawyerCard';
 import SearchBar from '@/components/ui/SearchBar';
 import PracticeFilter from '@/components/ui/PracticeFilter';
 import { LAWYERS } from '@/lib/constants/lawyers';
+import { PRACTICE_AREAS, CITIES } from '@/lib/constants/seoLandingPages';
 
-const CITIES = ['All Cities', 'Delhi', 'Mumbai', 'Bangalore', 'Chennai', 'Pune', 'Kolkata', 'Hyderabad'];
+const CITY_FILTER_OPTIONS = ['All Cities', 'Delhi', 'Mumbai', 'Bangalore', 'Chennai', 'Pune', 'Kolkata', 'Hyderabad'];
 
 export default function ServicesPage() {
   const [search, setSearch]         = useState('');
@@ -34,6 +35,14 @@ export default function ServicesPage() {
         subtitle="Experienced, qualified advocates ready to represent you across all courts and tribunals in India."
       />
 
+      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 24px 0' }}>
+        <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-body)', marginBottom: 12 }}>Browse legal help by practice area or city:</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+          {PRACTICE_AREAS.map((area) => <a key={area.slug} href={`/services/${area.slug}`} style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-body)' }}>{area.label}</a>)}
+          {CITIES.map((city) => <a key={city.slug} href={`/services/lawyers-in-${city.slug}`} style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-body)' }}>Lawyers in {city.name}</a>)}
+        </div>
+      </div>
+
       {/* Filters */}
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '40px 24px 0' }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center', marginBottom: 32 }}>
@@ -49,7 +58,7 @@ export default function ServicesPage() {
               fontFamily: 'var(--font-body)', fontSize: 15, cursor: 'pointer',
             }}
           >
-            {CITIES.map((c) => <option key={c} value={c}>{c}</option>)}
+            {CITY_FILTER_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
 

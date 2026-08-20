@@ -36,7 +36,7 @@ export async function POST(request) {
      * PRODUCTION: Uncomment to send email via Resend
      *
      * await resend.emails.send({
-     *   from: 'Lex India <noreply@lexindia.com>',
+    *   from: 'legalgroup <noreply@legalgroup.in>',
      *   to: process.env.CONTACT_EMAIL,
      *   subject: `New Consultation Request — ${service || 'General'} — ${name}`,
      *   html: `

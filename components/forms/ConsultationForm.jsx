@@ -63,7 +63,7 @@ export default function ConsultationForm() {
         <div style={{ fontSize: 52, marginBottom: 16 }}>✅</div>
         <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 26, color: 'var(--gold-primary)', marginBottom: 12 }}>Request Received!</h3>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>
-          Our team will contact you within 24 hours to schedule your consultation. Thank you for choosing Lex India.
+          Our team will contact you within 24 hours to schedule your consultation. Thank you for choosing legalgroup.
         </p>
       </div>
     );

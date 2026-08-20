@@ -3,11 +3,6 @@
  * Privacy Policy page
  */
 
-export const metadata = {
-  title: 'Privacy Policy | Lex India',
-  description: 'Read how Lex India collects, uses, and protects your information when you use our legal platform.',
-};
-
 export default function PrivacyPolicyPage() {
   return (
     <div style={{ minHeight: '100vh', padding: '96px 24px 80px', background: 'var(--dark-bg)' }}>
@@ -16,7 +11,7 @@ export default function PrivacyPolicyPage() {
           Privacy Policy
         </h1>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: 28 }}>
-          At Lex India, we respect your privacy and are committed to protecting your personal data. This policy explains what information we collect, why we collect it, and how we use it to improve your experience.
+          At legalgroup, we respect your privacy and are committed to protecting your personal data. This policy explains what information we collect, why we collect it, and how we use it to improve your experience.
         </p>
 
         <section style={{ marginBottom: 32 }}>

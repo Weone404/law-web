@@ -18,7 +18,7 @@ export default function StatsSection() {
   return (
     <section style={{
       padding: '80px 24px',
-      background: 'linear-gradient(135deg, #0A1628 0%, #0D1F3C 100%)',
+      background: 'var(--dark-hero)',
       position: 'relative', overflow: 'hidden',
     }}>
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>

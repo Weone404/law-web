@@ -1,4 +1,4 @@
-// File: D:\lew-web\lex-india\app\layout.jsx
+// File: D:\law-web\app\layout.jsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

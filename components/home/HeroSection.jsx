@@ -34,7 +34,7 @@ export default function HeroSection() {
       minHeight: '100vh', position: 'relative', overflow: 'hidden',
       display: 'flex', alignItems: 'center',
       background: isDark
-        ? 'linear-gradient(135deg, #050D1A 0%, #0A1628 45%, #0D1F3C 100%)'
+        ? 'var(--dark-hero)'
         : 'linear-gradient(135deg, #F8F6F0 0%, #EDE9DC 45%, #E2DAC8 100%)',
     }}>
       {/* Background decorations */}
@@ -82,7 +82,7 @@ export default function HeroSection() {
           fontFamily: 'var(--font-heading)',
           fontSize: 'clamp(40px, 6.5vw, 80px)',
           fontWeight: 900, lineHeight: 1.08,
-          color: isDark ? '#FFFFFF' : '#0A1628',
+          color: isDark ? 'var(--dark-ink)' : '#0A1628',
           maxWidth: 700, marginBottom: 24,
         }}>
           Where Justice Meets{' '}

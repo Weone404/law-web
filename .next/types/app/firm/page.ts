@@ -1,4 +1,4 @@
-// File: D:\lew-web\lex-india\app\firm\page.jsx
+// File: D:\law-web\app\firm\page.jsx
 import * as entry from '../../../../app/firm/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

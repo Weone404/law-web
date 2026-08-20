@@ -13,7 +13,7 @@ export function useTheme() {
 
   useEffect(() => {
     // Read persisted preference
-    const saved = localStorage.getItem('lex_theme');
+    const saved = localStorage.getItem('lex-theme') || localStorage.getItem('lex_theme');
     if (saved === 'light' || saved === 'dark') {
       setTheme(saved);
     } else {
@@ -26,14 +26,14 @@ export function useTheme() {
   useEffect(() => {
     // Apply to <html> data-theme attribute and CSS variables
     document.documentElement.setAttribute('data-theme', theme);
-    document.body.style.background = theme === 'dark' ? '#050D1A' : '#F8F6F0';
-    document.body.style.color      = theme === 'dark' ? '#FFFFFF' : '#0A1628';
+    document.body.style.background = theme === 'dark' ? '#0B1117' : '#F8F6F0';
+    document.body.style.color      = theme === 'dark' ? '#F7F2E8' : '#0A1628';
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
     setTheme((prev) => {
       const next = prev === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('lex_theme', next);
+      localStorage.setItem('lex-theme', next);
       return next;
     });
   }, []);

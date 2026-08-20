@@ -3,11 +3,6 @@
  * Terms of Use page
  */
 
-export const metadata = {
-  title: 'Terms of Use | Lex India',
-  description: 'Review the Lex India terms and conditions for using our legal services platform.',
-};
-
 export default function TermsOfUsePage() {
   return (
     <div style={{ minHeight: '100vh', padding: '96px 24px 80px', background: 'var(--dark-bg)' }}>
@@ -16,7 +11,7 @@ export default function TermsOfUsePage() {
           Terms of Use
         </h1>
         <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: 28 }}>
-          Welcome to Lex India. By using our website and services, you agree to these terms and conditions. Please read them carefully before continuing.
+          Welcome to legalgroup. By using our website and services, you agree to these terms and conditions. Please read them carefully before continuing.
         </p>
 
         <section style={{ marginBottom: 32 }}>
@@ -24,7 +19,7 @@ export default function TermsOfUsePage() {
             Use of Our Platform
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            You may use Lex India for lawful purposes only. You agree not to misuse our platform, submit false information, or attempt to access restricted areas of the site.
+            You may use legalgroup for lawful purposes only. You agree not to misuse our platform, submit false information, or attempt to access restricted areas of the site.
           </p>
         </section>
 
@@ -33,7 +28,7 @@ export default function TermsOfUsePage() {
             Intellectual Property
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            All content on this site is owned or licensed by Lex India. You may not reproduce, distribute, or modify our content without permission.
+            All content on this site is owned or licensed by legalgroup. You may not reproduce, distribute, or modify our content without permission.
           </p>
         </section>
 
@@ -42,7 +37,7 @@ export default function TermsOfUsePage() {
             Limitation of Liability
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-            Lex India is not liable for indirect or consequential damages from using this platform. Our services are provided "as is" without warranties to the fullest extent permitted by law.
+            legalgroup is not liable for indirect or consequential damages from using this platform. Our services are provided "as is" without warranties to the fullest extent permitted by law.
           </p>
         </section>
       </div>

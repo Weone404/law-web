@@ -85,7 +85,7 @@ export default function FirmPage() {
               fontFamily: 'var(--font-heading)', fontSize: 'clamp(36px,5.5vw,68px)',
               color: '#fff', fontWeight: 900, lineHeight: 1.1, marginBottom: 24,
             }}>
-              Lex India<br />
+              legalgroup<br />
               <span style={{ color: 'var(--gold-primary)' }}>Law Chambers</span>
             </motion.h1>
 

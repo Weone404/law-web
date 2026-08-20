@@ -14,10 +14,12 @@
   --gold-muted:    rgba(201, 168, 76, 0.15);
 
   /* Dark theme backgrounds */
-  --dark-bg:       #050D1A;
-  --dark-surface:  #080F1E;
-  --dark-elevated: #0A1628;
-  --dark-border:   rgba(201, 168, 76, 0.12);
+  --dark-bg:       #0B1117;
+  --dark-surface:  #111A23;
+  --dark-elevated: #182431;
+  --dark-border:   rgba(212, 176, 88, 0.18);
+  --dark-hero:     linear-gradient(135deg, #0B1117 0%, #14212C 52%, #1B3040 100%);
+  --dark-ink:      #F7F2E8;
 
   /* Light theme backgrounds */
   --light-bg:      #F8F6F0;
@@ -56,16 +58,16 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary:      #050D1A;
-  --bg-secondary:    #080F1E;
-  --bg-elevated:     #0A1628;
-  --text-primary:    #FFFFFF;
-  --text-secondary:  rgba(255, 255, 255, 0.72);
-  --text-muted:      rgba(255, 255, 255, 0.38);
-  --border-color:    rgba(201, 168, 76, 0.12);
-  --card-bg:         #080F1E;
-  --nav-bg:          rgba(5, 13, 26, 0.96);
-  --scrollbar-track: #050D1A;
+  --bg-primary:      #0B1117;
+  --bg-secondary:    #111A23;
+  --bg-elevated:     #182431;
+  --text-primary:    #F7F2E8;
+  --text-secondary:  rgba(247, 242, 232, 0.76);
+  --text-muted:      rgba(247, 242, 232, 0.48);
+  --border-color:    rgba(212, 176, 88, 0.18);
+  --card-bg:         #111A23;
+  --nav-bg:          rgba(11, 17, 23, 0.94);
+  --scrollbar-track: #0B1117;
 }
 
 /* ── Reset ── */
@@ -284,4 +286,9 @@ button { cursor: none; }
 @media print {
   .lex-cursor, .lex-follower,
   nav, .loading-screen { display: none !important; }
+}
+
+[data-theme="dark"] ::selection {
+  background: rgba(212, 176, 88, 0.32);
+  color: #FFF9ED;
 }

@@ -7,6 +7,7 @@
 'use client';
 
 import Link from 'next/link';
+import { OFFICES } from '@/lib/seo';
 
 const COLUMNS = [
   {
@@ -64,7 +65,7 @@ export default function Footer() {
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, textDecoration: 'none' }}>
               <span style={{ fontSize: 24 }}>⚖️</span>
               <span style={{ fontFamily: 'var(--font-heading)', fontSize: 22, color: 'var(--gold-primary)', fontWeight: 800 }}>
-                LEX INDIA
+                legalgroup
               </span>
             </Link>
             <p style={{
@@ -103,6 +104,12 @@ export default function Footer() {
                 >{s.label.toUpperCase()}</a>
               ))}
             </div>
+
+            <address style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, fontStyle: 'normal', maxWidth: 300 }}>
+              <strong style={{ color: 'var(--gold-primary)' }}>legalgroup</strong><br />
+              {OFFICES[0].address}<br />
+              <a href={`tel:${OFFICES[0].phone.replaceAll(' ', '')}`} style={{ color: 'inherit' }}>{OFFICES[0].phone}</a>
+            </address>
           </div>
 
           {/* Link columns */}
@@ -136,7 +143,7 @@ export default function Footer() {
         <div style={{ borderTop: '1px solid rgba(201,168,76,0.1)', paddingTop: 28 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.3)', margin: 0 }}>
-              © {new Date().getFullYear()} Lex India Law Chambers. All rights reserved.
+              © {new Date().getFullYear()} legalgroup. All rights reserved.
               &nbsp;|&nbsp; Bar Council of India Registered
             </p>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(201,168,76,0.38)', margin: 0 }}>

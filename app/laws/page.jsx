@@ -17,6 +17,7 @@ import { LAW_UPDATES, LAW_CATEGORIES } from '@/lib/constants/lawUpdates';
 export default function LawsPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
+  const [visibleCount, setVisibleCount] = useState(36);
 
   // ── Full-text search across all relevant fields ──────────────────────────────
   const normalised = useMemo(() => search.trim().toLowerCase(), [search]);
@@ -52,6 +53,8 @@ export default function LawsPage() {
       return haystack.includes(normalised);
     });
   }, [activeCategory, normalised]);
+
+  const visibleLaws = filtered.slice(0, visibleCount);
 
   // Count per category (for badges)
   const countByCategory = useMemo(() => {
@@ -168,11 +171,19 @@ export default function LawsPage() {
             transition={{ duration: 0.2 }}
             className="responsive-grid-3"
           >
-            {filtered.map((item, i) => (
+            {visibleLaws.map((item, i) => (
               <LawUpdateCard key={item.id || i} item={item} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {visibleCount < filtered.length && (
+          <div style={{ textAlign: 'center', marginTop: 36 }}>
+            <button onClick={() => setVisibleCount((count) => count + 36)} className="lex-btn lex-btn-outline" type="button">
+              Load more laws
+            </button>
+          </div>
+        )}
 
         {/* ── Empty State ───────────────────────────────────────────────────────── */}
         {filtered.length === 0 && (

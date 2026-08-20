@@ -79,7 +79,7 @@ export default function Navigation() {
             <div style={{
               fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 800,
               color: 'var(--gold-primary)', letterSpacing: '0.06em', lineHeight: 1,
-            }}>LEX INDIA</div>
+            }}>legalgroup</div>
             <div style={{
               fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
               color: isDark ? 'rgba(255,255,255,0.38)' : 'rgba(0,0,0,0.38)',
@@ -143,7 +143,7 @@ export default function Navigation() {
       {/* Mobile dropdown */}
       {menuOpen && (
         <div style={{
-          background: isDark ? '#050D1A' : '#F8F6F0',
+          background: isDark ? 'var(--bg-primary)' : '#F8F6F0',
           borderTop: '1px solid rgba(201,168,76,0.15)',
           padding: '12px 24px 24px',
         }}>
