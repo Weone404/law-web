@@ -8,12 +8,12 @@ import { useTheme } from '@/hooks/useTheme';
 import SectionHeader from '@/components/ui/SectionHeader';
 
 const AREAS = [
-  { icon: '⚖️', title: 'Criminal Law', desc: 'Expert defence and prosecution across all criminal matters under BNS 2023.', href: '/services/criminal-law' },
-  { icon: '🏛️', title: 'Constitutional Law', desc: 'Fundamental rights, writ petitions, PIL, and Supreme Court matters.', href: '/services/constitutional-law' },
-  { icon: '🏢', title: 'Corporate Law', desc: 'Company formation, M&A, SEBI, NCLT, and complex commercial disputes.', href: '/services/corporate-law' },
-  { icon: '👨‍👩‍👧', title: 'Family Law', desc: 'Divorce, custody, adoption, succession, and matrimonial disputes.', href: '/services/family-law' },
-  { icon: '🏠', title: 'Property Law', desc: 'Real estate disputes, title verification, RERA, and property registrations.', href: '/services/property-law' },
-  { icon: '💼', title: 'Civil Litigation', desc: 'Contract disputes, tort claims, injunctions, and civil court representation.', href: '/services/civil-law' },
+  { icon: '⚖️', title: 'Criminal Law', desc: 'Our criminal lawyers advise on bail, investigation, trial, appeals, and defence or prosecution strategy under BNS 2023 and related laws. We explain urgent options clearly while protecting due process and your rights.', href: '/services/criminal-law' },
+  { icon: '🏛️', title: 'Constitutional Law', desc: 'We handle fundamental-rights claims, writ petitions, public interest litigation, and Supreme Court matters. Our constitutional expertise connects careful research with practical representation.', href: '/services/constitutional-law' },
+  { icon: '🏢', title: 'Corporate Law', desc: 'Businesses receive advice on company formation, M&A, SEBI compliance, NCLT proceedings, contracts, and commercial disputes. We help leadership teams manage legal risk as they grow.', href: '/services/corporate-law' },
+  { icon: '👨‍👩‍👧', title: 'Family Law', desc: 'Our family lawyers support clients through divorce, custody, adoption, succession, maintenance, and matrimonial disputes. Sensitive advice and mediation remain central to our approach.', href: '/services/family-law' },
+  { icon: '🏠', title: 'Property Law', desc: 'We assist with title verification, real estate disputes, RERA complaints, registrations, and property documentation. Early legal review can prevent costly conflict and protect long-term ownership.', href: '/services/property-law' },
+  { icon: '💼', title: 'Civil Litigation', desc: 'Our civil litigators represent individuals and businesses in contract disputes, injunctions, recovery claims, tort matters, and appeals. We build each case around evidence, procedure, and a clear remedy.', href: '/services/civil-law' },
 ];
 
 export function PracticeAreasSection() {
@@ -44,7 +44,7 @@ export function PracticeAreasSection() {
                   <div style={{ fontSize: 38, marginBottom: 16 }}>{area.icon}</div>
                   <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: isDark ? 'var(--dark-ink)' : '#0A1628', marginBottom: 10 }}>{area.title}</h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.55)', lineHeight: 1.65, marginBottom: 16 }}>{area.desc}</p>
-                  <span style={{ color: 'var(--gold-primary)', fontSize: 13, fontFamily: 'var(--font-body)' }}>Learn more →</span>
+                  <span style={{ color: 'var(--gold-primary)', fontSize: 13, fontFamily: 'var(--font-body)' }}>Learn more about {area.title} →</span>
                 </div>
               </Link>
             </motion.div>

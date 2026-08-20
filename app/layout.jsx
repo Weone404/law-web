@@ -26,8 +26,15 @@ export const metadata = {
     'IPC', 'CrPC', 'constitution of india', 'supreme court india',
   ],
   authors: [{ name: 'legalgroup' }],
-  creator: 'legalgroup',
-  publisher: 'legalgroup',
+  icons: {
+    icon: '/icon.png',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+  manifest: '/manifest.json',
+  legacyIcons: {
+    icon: '/legalgroup_logo-removebg-preview.webp',
+    apple: '/legalgroup_logo-removebg-preview.webp',
+  },
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: 'website',
@@ -78,7 +85,6 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <JsonLd data={ORGANIZATION_SCHEMA} />

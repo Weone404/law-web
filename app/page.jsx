@@ -8,6 +8,7 @@ import PracticeAreasSection from '@/components/home/PracticeAreasSection';
 import StatsSection from '@/components/home/StatsSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTABanner from '@/components/home/CTABanner';
+import HomeContentSection from '@/components/home/HomeContentSection';
 import JsonLd from '@/components/seo/JsonLd';
 import { SITE_URL, BRAND_NAME, createMetadata, OFFICES } from '@/lib/seo';
 
@@ -27,6 +28,7 @@ export default function HomePage() {
       }} />
       <HeroSection />
       <PracticeAreasSection />
+      <HomeContentSection />
       <StatsSection />
       <TestimonialsSection />
       <CTABanner />

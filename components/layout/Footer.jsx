@@ -74,7 +74,10 @@ export default function Footer() {
               marginBottom: 24,
             }}>
               India's premier legal technology platform — serving law students, lawyers,
-              and clients seeking justice across every state and territory.
+              and clients seeking justice across every state and territory. Our legal
+              services cover criminal, constitutional, corporate, family, property,
+              civil, cyber, consumer, and tax matters, with support centered in New
+              Delhi, Mumbai, Bangalore, Chennai, Pune, Kolkata, and Hyderabad.
             </p>
             {/* Social icons */}
             <div style={{ display: 'flex', gap: 10 }}>

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.legalgroup.in/:path*",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "legalgroup.in"
+        }
+      ]
+    }
+  ]
+}

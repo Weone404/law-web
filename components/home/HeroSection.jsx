@@ -97,7 +97,8 @@ export default function HeroSection() {
           maxWidth: 560, marginBottom: 44,
         }}>
           India's premier legal platform connecting law students, practicing lawyers,
-          and clients seeking justice — all in one unified ecosystem.
+          and clients seeking justice — all in one unified ecosystem. Our legal expertise
+          helps people understand their options and pursue justice with confidence.
         </p>
 
         {/* CTAs */}

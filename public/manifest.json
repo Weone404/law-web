@@ -1,0 +1,23 @@
+{
+  "name": "legalgroup",
+  "short_name": "legalgroup",
+  "description": "Legal services, lawyers and Indian law resources.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1117",
+  "theme_color": "#0B1117",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

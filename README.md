@@ -175,6 +175,11 @@ npm install -g vercel
 vercel
 ```
 
+For the production domain, add both `legalgroup.in` and `www.legalgroup.in` in
+Vercel Project Settings → Domains, then set `www.legalgroup.in` as the primary
+domain. The checked-in `vercel.json` redirects the non-www hostname to the
+primary host while preserving the path and query string.
+
 ### Docker
 ```dockerfile
 FROM node:18-alpine

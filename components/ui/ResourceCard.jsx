@@ -41,7 +41,7 @@ export default function ResourceCard({ item }) {
 
       <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, color: isDark ? '#F0E8D0' : '#0A1628', marginBottom: 8, lineHeight: 1.4 }}>{item.title}</h3>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)', marginBottom: 16 }}>{item.subject}</p>
-      <span style={{ color: 'var(--gold-primary)', fontSize: 13, fontFamily: 'var(--font-body)' }}>Read more →</span>
+      <span style={{ color: 'var(--gold-primary)', fontSize: 13, fontFamily: 'var(--font-body)' }}>Review this legal resource →</span>
     </div>
   );
 }
