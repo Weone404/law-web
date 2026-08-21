@@ -74,7 +74,7 @@ export default function ServicesPage() {
         ) : (
           <div className="responsive-grid-3">
             {filtered.map((lawyer, i) => (
-              <LawyerCard key={i} lawyer={lawyer} />
+              <LawyerCard key={i} lawyer={lawyer} headingLevel={2} />
             ))}
           </div>
         )}

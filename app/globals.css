@@ -8,7 +8,8 @@
 /* ── CSS Custom Properties ── */
 :root {
   /* Gold palette */
-  --gold-primary:  #C9A84C;
+  --gold-primary:  #8B6914;
+  --gold-action:   #C9A84C;
   --gold-dark:     #8B6914;
   --gold-light:    #F0D060;
   --gold-muted:    rgba(201, 168, 76, 0.15);
@@ -45,6 +46,8 @@
    They automatically switch when data-theme changes on <html>. */
 
 [data-theme="light"] {
+  --gold-primary:  #8B6914;
+  --gold-action:   #C9A84C;
   --bg-primary:      #F8F6F0;
   --bg-secondary:    #FFFFFF;
   --bg-elevated:     #EDE9DC;
@@ -58,6 +61,8 @@
 }
 
 [data-theme="dark"] {
+  --gold-primary:  #C9A84C;
+  --gold-action:   #C9A84C;
   --bg-primary:      #0B1117;
   --bg-secondary:    #111A23;
   --bg-elevated:     #182431;
@@ -239,7 +244,7 @@ button { cursor: none; }
   box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
 }
 .lex-btn-primary {
-  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  background: linear-gradient(135deg, var(--gold-action), var(--gold-dark));
   color: #050D1A;
 }
 .lex-btn-outline {

@@ -118,11 +118,11 @@ export default function Footer() {
           {/* Link columns */}
           {COLUMNS.map((col) => (
             <div key={col.title}>
-              <h4 style={{
+              <h2 style={{
                 fontFamily: 'var(--font-heading)', fontSize: 13,
                 color: 'var(--gold-primary)', marginBottom: 18,
                 textTransform: 'uppercase', letterSpacing: '0.18em',
-              }}>{col.title}</h4>
+              }}>{col.title}</h2>
               <nav style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {col.links.map((link) => (
                   <Link

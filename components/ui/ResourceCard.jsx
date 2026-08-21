@@ -14,10 +14,11 @@ const TAG_COLORS = {
   Judiciary: '#3B82F6', Skills: '#10B981', Exam: '#8B5CF6', Internship: '#EC4899',
 };
 
-export default function ResourceCard({ item }) {
+export default function ResourceCard({ item, headingLevel = 3 }) {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   const tagColor = TAG_COLORS[item.tag] || '#C9A84C';
+  const Heading = `h${headingLevel}`;
 
   return (
     <div
@@ -39,7 +40,7 @@ export default function ResourceCard({ item }) {
         <span style={{ fontSize: 12, color: isDark ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.35)', fontFamily: 'var(--font-body)' }}>{item.updated}</span>
       </div>
 
-      <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, color: isDark ? '#F0E8D0' : '#0A1628', marginBottom: 8, lineHeight: 1.4 }}>{item.title}</h3>
+      <Heading style={{ fontFamily: 'var(--font-heading)', fontSize: 16, fontWeight: 700, color: isDark ? '#F0E8D0' : '#0A1628', marginBottom: 8, lineHeight: 1.4 }}>{item.title}</Heading>
       <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)', marginBottom: 16 }}>{item.subject}</p>
       <span style={{ color: 'var(--gold-primary)', fontSize: 13, fontFamily: 'var(--font-body)' }}>Review this legal resource →</span>
     </div>

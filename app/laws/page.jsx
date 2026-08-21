@@ -172,7 +172,7 @@ export default function LawsPage() {
             className="responsive-grid-3"
           >
             {visibleLaws.map((item, i) => (
-              <LawUpdateCard key={item.id || i} item={item} index={i} />
+              <LawUpdateCard key={item.id || i} item={item} index={i} headingLevel={2} />
             ))}
           </motion.div>
         </AnimatePresence>

@@ -115,7 +115,7 @@ export default function FirmPage() {
               }}
             >
               <div style={{ fontSize: 36, marginBottom: 16 }}>{item.icon}</div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: 'var(--gold-primary)', marginBottom: 16 }}>{item.title}</h3>
+              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, fontWeight: 700, color: 'var(--gold-primary)', marginBottom: 16 }}>{item.title}</h2>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: 'rgba(255,255,255,0.65)', lineHeight: 1.75 }}>{item.text}</p>
             </motion.div>
           ))}
@@ -136,7 +136,7 @@ export default function FirmPage() {
               }}
             >
               <div style={{ fontSize: 40, marginBottom: 16 }}>{v.icon}</div>
-              <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#F0E8D0', marginBottom: 12 }}>{v.title}</h4>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 700, color: '#F0E8D0', marginBottom: 12 }}>{v.title}</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>{v.desc}</p>
             </motion.div>
           ))}
@@ -163,7 +163,7 @@ export default function FirmPage() {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 36, margin: '0 auto 16px',
               }}>{member.icon}</div>
-              <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: 17, fontWeight: 700, color: '#F0E8D0', marginBottom: 6 }}>{member.name}</h4>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 17, fontWeight: 700, color: '#F0E8D0', marginBottom: 6 }}>{member.name}</h3>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--gold-primary)', marginBottom: 4 }}>{member.title}</p>
               <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 8 }}>{member.specialization}</p>
               <span style={{

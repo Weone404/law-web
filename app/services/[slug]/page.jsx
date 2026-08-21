@@ -46,7 +46,7 @@ export default function PracticeAreaPage({ params }) {
           <p style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-body)', textTransform: 'uppercase', letterSpacing: '0.2em' }}>Local Legal Directory</p>
           <h1 style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', fontSize: 'clamp(36px, 6vw, 64px)', margin: '16px 0' }}>Lawyers in {city.name}</h1>
           <p style={{ maxWidth: 680, color: 'var(--text-secondary)', fontFamily: 'var(--font-body)', fontSize: 20, lineHeight: 1.7 }}>Connect with experienced advocates in {city.name} for legal advice, litigation and representation across major practice areas.</p>
-          <div className="responsive-grid-3" style={{ marginTop: 48 }}>{cityLawyers.map((lawyer) => <LawyerCard key={lawyer.name} lawyer={lawyer} />)}</div>
+          <div className="responsive-grid-3" style={{ marginTop: 48 }}>{cityLawyers.map((lawyer) => <LawyerCard key={lawyer.name} lawyer={lawyer} headingLevel={2} />)}</div>
           {cityLawyers.length === 0 && <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-body)', marginTop: 32 }}>Our nationwide panel can connect you with counsel in {city.name}. Contact legalgroup for a referral.</p>}
         </div>
       </main>
@@ -73,7 +73,7 @@ export default function PracticeAreaPage({ params }) {
         <h2 style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', margin: '56px 0 24px' }}>Experienced {area.label} Advocates</h2>
         <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-body)', fontSize: 18, marginBottom: 28 }}>{area.lawyers}</p>
         <div className="responsive-grid-3">
-          {lawyers.map((lawyer) => <LawyerCard key={lawyer.name} lawyer={lawyer} />)}
+          {lawyers.map((lawyer) => <LawyerCard key={lawyer.name} lawyer={lawyer} headingLevel={3} />)}
         </div>
         {lawyers.length === 0 && <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-body)' }}>Our wider panel can connect you with a suitable specialist. <Link href="/contact" style={{ color: 'var(--gold-primary)' }}>Contact legalgroup</Link>.</p>}
       </div>

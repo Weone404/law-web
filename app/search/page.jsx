@@ -88,8 +88,8 @@ function SearchResults() {
           <div className="responsive-grid-3">
             {results.map((item, i) =>
               item._type === 'law'
-                ? <LawUpdateCard key={i} item={item} index={i} />
-                : <ResourceCard key={i} item={item} />
+                ? <LawUpdateCard key={i} item={item} index={i} headingLevel={2} />
+                : <ResourceCard key={i} item={item} headingLevel={2} />
             )}
           </div>
         )}

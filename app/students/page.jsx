@@ -86,7 +86,7 @@ export default function StudentsPage() {
         ) : (
           <div className="responsive-grid-3">
             {filtered.map((item, i) => (
-              <ResourceCard key={i} item={item} />
+              <ResourceCard key={i} item={item} headingLevel={3} />
             ))}
           </div>
         )}

@@ -7,8 +7,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function LawUpdateCard({ item, index }) {
+export default function LawUpdateCard({ item, index, headingLevel = 3 }) {
   const [expanded, setExpanded] = useState(false);
+  const Heading = `h${headingLevel}`;
 
   const statusColors = {
     'In Force': { bg: 'rgba(39,174,96,0.12)', border: 'rgba(39,174,96,0.35)', text: '#27AE60' },
@@ -57,11 +58,11 @@ export default function LawUpdateCard({ item, index }) {
 
       {/* Title */}
       <div>
-        <h3 style={{
+        <Heading style={{
           fontFamily: 'var(--font-heading)', fontSize: 15,
           color: '#fff', fontWeight: 700, margin: '0 0 4px',
           lineHeight: 1.35,
-        }}>{item.title}</h3>
+        }}>{item.title}</Heading>
         {item.replaces && (
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.4)', margin: 0 }}>
             Replaces: {item.replaces}

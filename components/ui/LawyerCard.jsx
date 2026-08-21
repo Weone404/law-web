@@ -5,10 +5,11 @@
 import { useState } from 'react';
 import { useTheme } from '@/hooks/useTheme';
 
-export default function LawyerCard({ lawyer }) {
+export default function LawyerCard({ lawyer, headingLevel = 3 }) {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   const [showModal, setShowModal] = useState(false);
+  const Heading = `h${headingLevel}`;
 
   return (
     <>
@@ -32,7 +33,7 @@ export default function LawyerCard({ lawyer }) {
             display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28,
           }}>{lawyer.icon}</div>
           <div>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 17, fontWeight: 700, color: isDark ? '#F0E8D0' : '#0A1628', lineHeight: 1.3, marginBottom: 4 }}>{lawyer.name}</h3>
+            <Heading style={{ fontFamily: 'var(--font-heading)', fontSize: 17, fontWeight: 700, color: isDark ? '#F0E8D0' : '#0A1628', lineHeight: 1.3, marginBottom: 4 }}>{lawyer.name}</Heading>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--gold-primary)' }}>{lawyer.specialization}</p>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: isDark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)', marginTop: 2 }}>📍 {lawyer.city}</p>
           </div>

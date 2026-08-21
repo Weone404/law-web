@@ -63,7 +63,7 @@ function getEntries() {
     lastModified: lastModified(ROUTE_FILES[url]),
   }));
 
-  addRecords(entries, 'laws', LAW_UPDATES, 'lib/constants/lawUpdates.js');
+  addRecords(entries, '/laws', LAW_UPDATES, 'lib/constants/lawUpdates.js');
   if (fs.existsSync(path.join(process.cwd(), 'app', 'laws', '[id]', 'page.jsx'))) {
     const modified = lastModified('app/laws/[id]/page.jsx');
     LAW_UPDATES.forEach(({ id }) => entries.push({ url: `/laws/${encodeURIComponent(id)}`, lastModified: modified }));
@@ -95,11 +95,15 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+function toSiteUrl(pathname) {
+  return new URL(pathname, `${SITE_URL}/`).toString();
+}
+
 export async function GET() {
   const urls = getEntries()
     .map(({ url, lastModified }) => `
     <url>
-      <loc>${escapeXml(`${SITE_URL}${url}`)}</loc>${lastModified ? `
+      <loc>${escapeXml(toSiteUrl(url))}</loc>${lastModified ? `
       <lastmod>${lastModified}</lastmod>` : ''}
       <changefreq>${url === '/' ? 'weekly' : 'monthly'}</changefreq>
       <priority>${url === '/' ? '1.0' : '0.8'}</priority>
