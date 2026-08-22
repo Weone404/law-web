@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   return (
-    <section style={{ padding: '100px 24px', background: isDark ? 'var(--bg-primary)' : '#F0EDE4' }}>
+    <section className="light-gold-surface" style={{ padding: '100px 24px', background: isDark ? 'var(--bg-primary)' : '#F0EDE4' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <SectionHeader eyebrow="Client Stories" title="Trusted by Thousands Across India" />
         <div className="responsive-grid-3" style={{ marginTop: 56 }}>

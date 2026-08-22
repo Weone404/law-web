@@ -53,7 +53,7 @@ export default function Navigation() {
 
   const navBg = scrolled
     ? isDark ? 'rgba(5,13,26,0.96)' : 'rgba(248,246,240,0.96)'
-    : 'transparent';
+    : isDark ? 'transparent' : 'rgba(248,246,240,0.96)';
 
   return (
     <nav style={{
@@ -82,7 +82,7 @@ export default function Navigation() {
             }}>legalgroup</div>
             <div style={{
               fontSize: 9, letterSpacing: '0.28em', textTransform: 'uppercase',
-              color: isDark ? 'rgba(255,255,255,0.38)' : 'rgba(0,0,0,0.38)',
+              color: 'var(--text-meta)',
             }}>Legal Excellence</div>
           </div>
         </Link>

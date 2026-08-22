@@ -5,7 +5,7 @@
 'use client';
 export default function PageHeader({ eyebrow, title, subtitle }) {
   return (
-    <div style={{
+    <div className="dark-gold-surface" style={{
       background: 'var(--dark-hero)',
       padding: '64px 24px 80px', position: 'relative', overflow: 'hidden',
     }}>

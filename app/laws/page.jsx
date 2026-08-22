@@ -67,7 +67,7 @@ export default function LawsPage() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
       {/* ── Hero ───────────────────────────────────────────────────────────────── */}
       <div style={{
         background: 'linear-gradient(135deg, #050D1A 0%, #0D1A30 100%)',

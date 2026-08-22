@@ -47,7 +47,7 @@ const TEAM = [
 
 export default function FirmPage() {
   return (
-    <div style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
       {/* Hero */}
       <div style={{
         background: 'linear-gradient(160deg, #050D1A 0%, #0A1628 50%, #0D1F3C 100%)',

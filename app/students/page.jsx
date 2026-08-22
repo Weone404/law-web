@@ -32,7 +32,7 @@ export default function StudentsPage() {
   );
 
   return (
-    <div style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
       {/* Page Header */}
       <PageHeader
         eyebrow="Legal Education Hub"

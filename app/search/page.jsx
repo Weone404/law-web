@@ -45,7 +45,7 @@ function SearchResults() {
   }, [query]);
 
   return (
-    <div style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
       {/* Header */}
       <div style={{ background: 'linear-gradient(135deg, #050D1A, #0D1F3C)', padding: '60px 24px 80px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>

@@ -8,11 +8,31 @@
 /* ── CSS Custom Properties ── */
 :root {
   /* Gold palette */
-  --gold-primary:  #8B6914;
+  --gold-on-light: #765300;
+  --gold-on-dark:  #F0D060;
+  --gold-primary:  var(--gold-on-light);
   --gold-action:   #C9A84C;
   --gold-dark:     #8B6914;
   --gold-light:    #F0D060;
   --gold-muted:    rgba(201, 168, 76, 0.15);
+  --text-meta:     #AEB6BE;
+  --text-subtle:   #C1C8CE;
+  --badge-gold-bg: #765300;
+  --badge-gold-text: #FFFFFF;
+  --badge-purple-bg: #5B2C6F;
+  --badge-purple-text: #FFFFFF;
+  --badge-red-bg: #9B2C2C;
+  --badge-red-text: #FFFFFF;
+  --badge-green-bg: #166534;
+  --badge-green-text: #FFFFFF;
+  --badge-gray-bg: #4B5563;
+  --badge-gray-text: #FFFFFF;
+  --badge-blue-bg: #1D4ED8;
+  --badge-blue-text: #FFFFFF;
+  --badge-pink-bg: #9D174D;
+  --badge-pink-text: #FFFFFF;
+  --badge-orange-bg: #9A3412;
+  --badge-orange-text: #FFFFFF;
 
   /* Dark theme backgrounds */
   --dark-bg:       #0B1117;
@@ -46,7 +66,7 @@
    They automatically switch when data-theme changes on <html>. */
 
 [data-theme="light"] {
-  --gold-primary:  #8B6914;
+  --gold-primary:  var(--gold-on-light);
   --gold-action:   #C9A84C;
   --bg-primary:      #F8F6F0;
   --bg-secondary:    #FFFFFF;
@@ -58,11 +78,13 @@
   --card-bg:         #FFFFFF;
   --nav-bg:          rgba(248, 246, 240, 0.96);
   --scrollbar-track: #F8F6F0;
+  --text-meta:     #4B5563;
+  --text-subtle:   #374151;
 }
 
 [data-theme="dark"] {
-  --gold-primary:  #E1C26A;
-  --gold-action:   #E9CC7B;
+  --gold-primary:  var(--gold-on-dark);
+  --gold-action:   #F5D779;
   --bg-primary:      #0B1117;
   --bg-secondary:    #111A23;
   --bg-elevated:     #182431;
@@ -73,6 +95,8 @@
   --card-bg:         #111A23;
   --nav-bg:          rgba(11, 17, 23, 0.94);
   --scrollbar-track: #0B1117;
+  --text-meta:     #AEB6BE;
+  --text-subtle:   #C1C8CE;
 }
 
 /* ── Reset ── */
@@ -296,4 +320,9 @@ button { cursor: none; }
 [data-theme="dark"] ::selection {
   background: rgba(212, 176, 88, 0.32);
   color: #FFF9ED;
+}
+
+/* Fixed dark sections can appear while the light theme is selected. */
+.dark-gold-surface {
+  --gold-primary: var(--gold-on-dark);
 }

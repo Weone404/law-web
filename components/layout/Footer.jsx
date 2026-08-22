@@ -48,7 +48,7 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer style={{
+    <footer className="dark-gold-surface" style={{
       background: '#030910',
       borderTop: '1px solid rgba(201,168,76,0.14)',
       padding: '60px 24px 32px',

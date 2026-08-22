@@ -16,7 +16,7 @@ export default function StatsSection() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   return (
-    <section style={{
+    <section className="dark-gold-surface" style={{
       padding: '80px 24px',
       background: 'var(--dark-hero)',
       position: 'relative', overflow: 'hidden',

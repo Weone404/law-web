@@ -35,7 +35,7 @@ export default function LawyerCard({ lawyer, headingLevel = 3 }) {
           <div>
             <Heading style={{ fontFamily: 'var(--font-heading)', fontSize: 17, fontWeight: 700, color: isDark ? '#F0E8D0' : '#0A1628', lineHeight: 1.3, marginBottom: 4 }}>{lawyer.name}</Heading>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--gold-primary)' }}>{lawyer.specialization}</p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: isDark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)', marginTop: 2 }}>📍 {lawyer.city}</p>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--text-meta)', marginTop: 2 }}>📍 {lawyer.city}</p>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function LawyerCard({ lawyer, headingLevel = 3 }) {
           {[{ label: 'Exp.', val: lawyer.exp }, { label: 'Cases', val: lawyer.cases }, { label: 'Rating', val: `⭐ ${lawyer.rating}` }].map((m, j) => (
             <div key={j} style={{ flex: 1, textAlign: 'center', background: isDark ? 'rgba(255,255,255,0.03)' : '#F8F6F0', borderRadius: 8, padding: '10px 4px' }}>
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: 15, fontWeight: 700, color: 'var(--gold-primary)' }}>{m.val}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: isDark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)', marginTop: 2 }}>{m.label}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'var(--text-meta)', marginTop: 2 }}>{m.label}</div>
             </div>
           ))}
         </div>

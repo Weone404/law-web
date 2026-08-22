@@ -13,7 +13,7 @@ export default function SectionHeader({ eyebrow, title, subtitle }) {
         <div style={{
           display: 'inline-block', fontFamily: 'var(--font-body)',
           fontSize: 11, letterSpacing: '0.3em', textTransform: 'uppercase',
-          color: isDark ? '#E4C77A' : 'var(--gold-primary)', marginBottom: 16,
+          color: isDark ? 'var(--gold-on-dark)' : 'var(--gold-on-light)', marginBottom: 16,
           padding: '4px 16px', border: `1px solid ${isDark ? 'rgba(201,168,76,0.3)' : 'rgba(20,24,32,0.2)'}`, borderRadius: 20,
         }}>{eyebrow}</div>
       )}

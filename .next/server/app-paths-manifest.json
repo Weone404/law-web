@@ -1,3 +1,23 @@
 {
-  "/page": "app/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
+  "/api/laws/route": "app/api/laws/route.js",
+  "/api/lawyers/route": "app/api/lawyers/route.js",
+  "/page": "app/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/firm/page": "app/firm/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/students/page": "app/students/page.js",
+  "/services/page": "app/services/page.js",
+  "/services/[slug]/page": "app/services/[slug]/page.js",
+  "/laws/[id]/page": "app/laws/[id]/page.js",
+  "/laws/page": "app/laws/page.js",
+  "/terms-of-use/page": "app/terms-of-use/page.js",
+  "/search/page": "app/search/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
+  "/opengraph-image/route": "app/opengraph-image/route.js",
+  "/laws/opengraph-image/route": "app/laws/opengraph-image/route.js",
+  "/firm/opengraph-image/route": "app/firm/opengraph-image/route.js",
+  "/services/opengraph-image/route": "app/services/opengraph-image/route.js"
 }

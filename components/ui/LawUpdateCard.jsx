@@ -7,19 +7,29 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const TAG_STYLES = {
+  '#C9A84C': { background: 'var(--badge-gold-bg)', color: 'var(--badge-gold-text)' },
+  '#8E44AD': { background: 'var(--badge-purple-bg)', color: 'var(--badge-purple-text)' },
+  '#9B59B6': { background: 'var(--badge-purple-bg)', color: 'var(--badge-purple-text)' },
+  '#E74C3C': { background: 'var(--badge-red-bg)', color: 'var(--badge-red-text)' },
+  '#27AE60': { background: 'var(--badge-green-bg)', color: 'var(--badge-green-text)' },
+  '#95A5A6': { background: 'var(--badge-gray-bg)', color: 'var(--badge-gray-text)' },
+};
+
 export default function LawUpdateCard({ item, index, headingLevel = 3 }) {
   const [expanded, setExpanded] = useState(false);
   const Heading = `h${headingLevel}`;
 
   const statusColors = {
-    'In Force': { bg: 'rgba(39,174,96,0.12)', border: 'rgba(39,174,96,0.35)', text: '#27AE60' },
-    'Repealed': { bg: 'rgba(149,165,166,0.12)', border: 'rgba(149,165,166,0.35)', text: '#95A5A6' },
-    'Rules Awaited': { bg: 'rgba(52,152,219,0.12)', border: 'rgba(52,152,219,0.35)', text: '#3498DB' },
-    'Awaiting Implementation': { bg: 'rgba(230,126,34,0.12)', border: 'rgba(230,126,34,0.35)', text: '#E67E22' },
-    'Enacted': { bg: 'rgba(52,152,219,0.12)', border: 'rgba(52,152,219,0.35)', text: '#3498DB' },
+    'In Force': { bg: 'var(--badge-green-bg)', border: 'rgba(255,255,255,0.3)', text: 'var(--badge-green-text)' },
+    'Repealed': { bg: 'var(--badge-gray-bg)', border: 'rgba(255,255,255,0.3)', text: 'var(--badge-gray-text)' },
+    'Rules Awaited': { bg: 'var(--badge-blue-bg)', border: 'rgba(255,255,255,0.3)', text: 'var(--badge-blue-text)' },
+    'Awaiting Implementation': { bg: 'var(--badge-orange-bg)', border: 'rgba(255,255,255,0.3)', text: 'var(--badge-orange-text)' },
+    'Enacted': { bg: 'var(--badge-blue-bg)', border: 'rgba(255,255,255,0.3)', text: 'var(--badge-blue-text)' },
   };
 
   const sc = statusColors[item.status] || statusColors['In Force'];
+  const tagStyle = TAG_STYLES[item.tagColor] || TAG_STYLES['#C9A84C'];
 
   return (
     <motion.div
@@ -43,8 +53,8 @@ export default function LawUpdateCard({ item, index, headingLevel = 3 }) {
       {/* Top row: tag + status */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
         <span style={{
-          background: item.tagColor || '#C9A84C',
-          color: ['#C9A84C', '#8E44AD'].includes(item.tagColor) ? '#050D1A' : '#fff',
+          background: tagStyle.background,
+          color: tagStyle.color,
           fontSize: 10, fontWeight: 800, padding: '3px 9px',
           borderRadius: 4, letterSpacing: '0.1em', flexShrink: 0,
         }}>{item.tag}</span>
@@ -64,12 +74,12 @@ export default function LawUpdateCard({ item, index, headingLevel = 3 }) {
           lineHeight: 1.35,
         }}>{item.title}</Heading>
         {item.replaces && (
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(255,255,255,0.4)', margin: 0 }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'var(--text-meta)', margin: 0 }}>
             Replaces: {item.replaces}
           </p>
         )}
         {item.replacedBy && (
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'rgba(231,76,60,0.8)', margin: 0 }}>
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: '#FF9B9B', margin: 0 }}>
             Replaced by: {item.replacedBy}
           </p>
         )}
@@ -88,7 +98,7 @@ export default function LawUpdateCard({ item, index, headingLevel = 3 }) {
           </span>
         )}
         {item.ministry && (
-          <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontFamily: 'var(--font-body)' }}>
+          <span style={{ fontSize: 11, color: 'var(--text-meta)', fontFamily: 'var(--font-body)' }}>
             🏛️ {item.ministry}
           </span>
         )}

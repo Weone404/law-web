@@ -28,7 +28,7 @@ export default function ServicesPage() {
   });
 
   return (
-    <div style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
       <PageHeader
         eyebrow="Panel of Advocates"
         title="Legal Services"

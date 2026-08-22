@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div style={{
+    <div className="dark-gold-surface" style={{
       minHeight: '100vh', display: 'flex', flexDirection: 'column',
       alignItems: 'center', justifyContent: 'center',
       background: 'var(--dark-bg)', textAlign: 'center', padding: 24,

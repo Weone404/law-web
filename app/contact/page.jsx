@@ -10,14 +10,14 @@ import { motion } from 'framer-motion';
 import ConsultationForm from '@/components/forms/ConsultationForm';
 
 const OFFICES = [
-  { city: 'New Delhi (HQ)', icon: '🏛️', addr: '5th Floor, Connaught Place, New Delhi — 110001', phone: '+91 11 4000 1234', email: 'delhi@lexindia.com' },
-  { city: 'Mumbai',          icon: '🌆', addr: 'Nariman Point, BKC, Mumbai — 400051',            phone: '+91 22 6600 5678', email: 'mumbai@lexindia.com' },
-  { city: 'Bangalore',       icon: '🌿', addr: 'MG Road, Indiranagar, Bangalore — 560038',       phone: '+91 80 4100 7890', email: 'blr@lexindia.com' },
+  { city: 'New Delhi (HQ)', icon: '🏛️', addr: '5th Floor, Connaught Place, New Delhi — 110001', phone: '+91 11 4000 1234', email: 'info@legalgroup.in' },
+  { city: 'Mumbai',          icon: '🌆', addr: 'Nariman Point, BKC, Mumbai — 400051',            phone: '+91 22 6600 5678', email: 'info@legalgroup.in' },
+  { city: 'Bangalore',       icon: '🌿', addr: 'MG Road, Indiranagar, Bangalore — 560038',       phone: '+91 80 4100 7890', email: 'info@legalgroup.in' },
 ];
 
 export default function ContactPage() {
   return (
-    <div style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
       {/* Header */}
       <div style={{
         background: 'linear-gradient(135deg, #0A1628, #0D1F3C)',
@@ -64,7 +64,7 @@ export default function ContactPage() {
                   </h3>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.65)', marginBottom: 6 }}>{office.addr}</p>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'var(--gold-primary)', marginBottom: 4 }}>{office.phone}</p>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.45)' }}>{office.email}</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'var(--text-meta)' }}>{office.email}</p>
                 </motion.div>
               ))}
             </div>

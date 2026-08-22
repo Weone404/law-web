@@ -5,7 +5,7 @@
 
 export default function PrivacyPolicyPage() {
   return (
-    <div style={{ minHeight: '100vh', padding: '96px 24px 80px', background: 'var(--dark-bg)' }}>
+    <div className="dark-gold-surface" style={{ minHeight: '100vh', padding: '96px 24px 80px', background: 'var(--dark-bg)' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(34px, 5vw, 52px)', color: '#fff', marginBottom: 20 }}>
           Privacy Policy
