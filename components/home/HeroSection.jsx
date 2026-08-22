@@ -93,7 +93,7 @@ export default function HeroSection() {
         <p style={{
           ...fade(0.3),
           fontFamily: 'var(--font-body)', fontSize: 20, lineHeight: 1.75,
-          color: isDark ? 'rgba(255,255,255,0.62)' : 'rgba(0,0,0,0.6)',
+          color: isDark ? 'rgba(247, 242, 232, 0.82)' : 'rgba(0,0,0,0.68)',
           maxWidth: 560, marginBottom: 44,
         }}>
           India's premier legal platform connecting law students, practicing lawyers,
@@ -129,7 +129,7 @@ export default function HeroSection() {
           {STATS.map((s, i) => (
             <div key={i} style={{ textAlign: i === 0 ? 'left' : 'center', padding: '0 16px' }}>
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: 34, fontWeight: 800, color: 'var(--gold-primary)' }}>{s.value}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.15em', color: isDark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.45)', marginTop: 4 }}>{s.label}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.15em', color: isDark ? 'rgba(247, 242, 232, 0.7)' : 'rgba(0,0,0,0.62)', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
         </div>

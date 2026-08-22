@@ -6,6 +6,7 @@
 
 import './globals.css';
 import Script from 'next/script';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/cursor/CustomCursor';
@@ -90,22 +91,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        {GA_MEASUREMENT_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
-              `}
-            </Script>
-          </>
-        )}
+        {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
         <JsonLd data={ORGANIZATION_SCHEMA} />
         <BreadcrumbSchema />
         {/* Custom law-themed animated cursor */}

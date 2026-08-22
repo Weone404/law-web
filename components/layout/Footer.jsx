@@ -70,7 +70,7 @@ export default function Footer() {
             </Link>
             <p style={{
               fontFamily: 'var(--font-body)', fontSize: 15,
-              color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, maxWidth: 300,
+              color: 'rgba(255,255,255,0.76)', lineHeight: 1.7, maxWidth: 300,
               marginBottom: 24,
             }}>
               India's premier legal technology platform — serving law students, lawyers,
@@ -96,14 +96,14 @@ export default function Footer() {
                     width: 36, height: 36, borderRadius: '50%',
                     border: '1px solid rgba(201,168,76,0.25)',
                     background: 'none', cursor: 'pointer',
-                    color: 'rgba(201,168,76,0.6)',
+                    color: '#E3C77C',
                     fontSize: 10, fontFamily: 'var(--font-body)',
                     fontWeight: 700, letterSpacing: 0,
                     textDecoration: 'none',
                     transition: 'border-color 0.2s, color 0.2s',
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--gold-primary)'; e.currentTarget.style.color = 'var(--gold-primary)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.25)'; e.currentTarget.style.color = 'rgba(201,168,76,0.6)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.25)'; e.currentTarget.style.color = '#E3C77C'; }}
                 >{s.label.toUpperCase()}</a>
               ))}
             </div>
@@ -130,11 +130,11 @@ export default function Footer() {
                     href={link.href}
                     style={{
                       fontFamily: 'var(--font-body)', fontSize: 15,
-                      color: 'rgba(255,255,255,0.45)', textDecoration: 'none',
+                      color: 'rgba(255,255,255,0.76)', textDecoration: 'none',
                       transition: 'color 0.2s',
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gold-primary)'}
-                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.45)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.76)'}
                   >{link.label}</Link>
                 ))}
               </nav>
@@ -145,11 +145,11 @@ export default function Footer() {
         {/* Divider */}
         <div style={{ borderTop: '1px solid rgba(201,168,76,0.1)', paddingTop: 28 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.3)', margin: 0 }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(255,255,255,0.8)', margin: 0 }}>
               © {new Date().getFullYear()} legalgroup. All rights reserved.
               &nbsp;|&nbsp; Bar Council of India Registered
             </p>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'rgba(201,168,76,0.38)', margin: 0 }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: '#F2D17B', margin: 0 }}>
               Justice · Knowledge · Integrity
             </p>
           </div>

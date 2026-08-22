@@ -7,7 +7,7 @@ export default function HomeContentSection() {
   const { theme } = useTheme();
   const isDark = theme === 'dark';
   const headingColor = isDark ? 'var(--dark-ink)' : '#0A1628';
-  const bodyColor = isDark ? 'rgba(255,255,255,0.68)' : 'rgba(0,0,0,0.68)';
+  const bodyColor = isDark ? 'rgba(247, 242, 232, 0.82)' : 'rgba(0,0,0,0.72)';
 
   return (
     <section style={{ padding: '96px 24px', background: isDark ? 'var(--bg-secondary)' : '#F8F6F0' }}>
@@ -24,7 +24,7 @@ export default function HomeContentSection() {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 24, marginBottom: 72 }} className="home-content-grid">
-          <article style={{ background: isDark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border: '1px solid rgba(201,168,76,0.2)', borderRadius: 12, padding: '32px 30px' }}>
+          <article style={{ background: isDark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border: '1px solid rgba(20,24,32,0.14)', borderRadius: 12, padding: '32px 30px' }}>
             <h2 style={{ color: headingColor, fontFamily: 'var(--font-heading)', fontSize: 28, marginBottom: 16 }}>Our Approach</h2>
             <p style={{ color: bodyColor, fontFamily: 'var(--font-body)', fontSize: 17, lineHeight: 1.8, marginBottom: 14 }}>
               Good representation begins with listening. We first understand the facts, urgency, practical constraints, and outcome you want. Then we explain the relevant law in plain language, identify the available options, and set out the likely costs, risks, and timelines before recommending a strategy.
@@ -33,7 +33,7 @@ export default function HomeContentSection() {
               Throughout a matter, we value responsive communication, careful legal research, and honest advice. That disciplined process helps clients make informed decisions while allowing our lawyers to pursue justice with the detail and expertise complex cases require.
             </p>
           </article>
-          <article style={{ background: isDark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border: '1px solid rgba(201,168,76,0.2)', borderRadius: 12, padding: '32px 30px' }}>
+          <article style={{ background: isDark ? 'rgba(255,255,255,0.04)' : '#FFFFFF', border: '1px solid rgba(20,24,32,0.14)', borderRadius: 12, padding: '32px 30px' }}>
             <h2 style={{ color: headingColor, fontFamily: 'var(--font-heading)', fontSize: 28, marginBottom: 16 }}>Who We Serve</h2>
             <p style={{ color: bodyColor, fontFamily: 'var(--font-body)', fontSize: 17, lineHeight: 1.8, marginBottom: 14 }}>
               Our clients include families navigating sensitive personal matters, founders and established companies managing legal risk, property owners protecting valuable interests, and people who need a strong defence or a fair hearing. We also support law students with case-law research, bare acts, notes, and career resources.

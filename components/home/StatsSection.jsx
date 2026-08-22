@@ -31,7 +31,7 @@ export default function StatsSection() {
               style={{ textAlign: 'center', padding: '20px' }}>
               <div style={{ fontSize: 36, marginBottom: 12 }}>{s.icon}</div>
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: 40, fontWeight: 900, color: 'var(--gold-primary)', marginBottom: 8 }}>{s.value}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.05em' }}>{s.label}</div>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.8)', letterSpacing: '0.05em' }}>{s.label}</div>
             </motion.div>
           ))}
         </div>

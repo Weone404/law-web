@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
               }}>
               <div style={{ fontSize: 30, marginBottom: 12 }}>{t.icon}</div>
               <div style={{ color: 'var(--gold-primary)', fontSize: 28, marginBottom: 10, fontFamily: 'Georgia, serif' }}>"</div>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, lineHeight: 1.75, color: isDark ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.7)', marginBottom: 24 }}>{t.quote}</p>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, lineHeight: 1.75, color: isDark ? 'rgba(247, 242, 232, 0.82)' : 'rgba(0,0,0,0.74)', marginBottom: 24 }}>{t.quote}</p>
               <div style={{ borderTop: `1px solid ${isDark ? 'rgba(201,168,76,0.1)' : 'rgba(201,168,76,0.2)'}`, paddingTop: 16 }}>
                 <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: isDark ? 'var(--dark-ink)' : '#0A1628', fontSize: 15 }}>{t.name}</div>
                 <div style={{ fontFamily: 'var(--font-body)', fontSize: 13, color: 'var(--gold-primary)', marginTop: 4 }}>{t.title}</div>

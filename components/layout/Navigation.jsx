@@ -60,7 +60,7 @@ export default function Navigation() {
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
       background: navBg,
       backdropFilter: scrolled ? 'blur(24px)' : 'none',
-      borderBottom: scrolled ? `1px solid ${isDark ? 'rgba(201,168,76,0.14)' : 'rgba(0,0,0,0.08)'}` : 'none',
+      borderBottom: scrolled ? `1px solid ${isDark ? 'rgba(201,168,76,0.14)' : 'rgba(20,24,32,0.12)'}` : 'none',
       transition: 'all 0.4s ease',
       padding: '0 24px',
     }}>
@@ -113,7 +113,7 @@ export default function Navigation() {
           <button
             onClick={toggleTheme}
             style={{
-              background: 'none', border: '1px solid rgba(201,168,76,0.4)',
+              background: 'none', border: `1px solid ${isDark ? 'rgba(201,168,76,0.4)' : 'rgba(20,24,32,0.18)'}`,
               borderRadius: 20, padding: '6px 13px', cursor: 'pointer',
               color: 'var(--gold-primary)', fontSize: 12,
               fontFamily: 'var(--font-body)', marginLeft: 8, transition: 'all 0.2s',

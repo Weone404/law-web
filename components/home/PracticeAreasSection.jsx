@@ -34,16 +34,16 @@ export function PracticeAreasSection() {
               <Link href={area.href} style={{ textDecoration: 'none', display: 'block' }}>
                 <div style={{
                   background: isDark ? 'rgba(255,255,255,0.03)' : '#F8F6F0',
-                  border: `1px solid ${isDark ? 'rgba(201,168,76,0.1)' : 'rgba(201,168,76,0.2)'}`,
+                  border: `1px solid ${isDark ? 'rgba(201,168,76,0.1)' : 'rgba(20,24,32,0.16)'}`,
                   borderRadius: 16, padding: '32px 28px', height: '100%',
                   transition: 'all 0.3s ease',
                 }}
                   onMouseEnter={(e) => { const el = e.currentTarget; el.style.transform = 'translateY(-6px)'; el.style.borderColor = 'rgba(201,168,76,0.5)'; el.style.boxShadow = '0 20px 40px rgba(201,168,76,0.1)'; }}
-                  onMouseLeave={(e) => { const el = e.currentTarget; el.style.transform = ''; el.style.borderColor = isDark ? 'rgba(201,168,76,0.1)' : 'rgba(201,168,76,0.2)'; el.style.boxShadow = ''; }}
+                  onMouseLeave={(e) => { const el = e.currentTarget; el.style.transform = ''; el.style.borderColor = isDark ? 'rgba(201,168,76,0.1)' : 'rgba(20,24,32,0.16)'; el.style.boxShadow = ''; }}
                 >
                   <div style={{ fontSize: 38, marginBottom: 16 }}>{area.icon}</div>
                   <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 20, fontWeight: 700, color: isDark ? 'var(--dark-ink)' : '#0A1628', marginBottom: 10 }}>{area.title}</h3>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.55)', lineHeight: 1.65, marginBottom: 16 }}>{area.desc}</p>
+                  <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: isDark ? 'rgba(247, 242, 232, 0.78)' : 'rgba(0,0,0,0.72)', lineHeight: 1.65, marginBottom: 16 }}>{area.desc}</p>
                   <span style={{ color: 'var(--gold-primary)', fontSize: 13, fontFamily: 'var(--font-body)' }}>Learn more about {area.title} →</span>
                 </div>
               </Link>

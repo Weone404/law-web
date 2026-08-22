@@ -52,23 +52,23 @@
   --bg-secondary:    #FFFFFF;
   --bg-elevated:     #EDE9DC;
   --text-primary:    #0A0A0A;
-  --text-secondary:  rgba(0, 0, 0, 0.65);
-  --text-muted:      rgba(0, 0, 0, 0.38);
-  --border-color:    rgba(201, 168, 76, 0.2);
+  --text-secondary:  rgba(0, 0, 0, 0.72);
+  --text-muted:      rgba(0, 0, 0, 0.52);
+  --border-color:    rgba(20, 24, 32, 0.18);
   --card-bg:         #FFFFFF;
   --nav-bg:          rgba(248, 246, 240, 0.96);
   --scrollbar-track: #F8F6F0;
 }
 
 [data-theme="dark"] {
-  --gold-primary:  #C9A84C;
-  --gold-action:   #C9A84C;
+  --gold-primary:  #E1C26A;
+  --gold-action:   #E9CC7B;
   --bg-primary:      #0B1117;
   --bg-secondary:    #111A23;
   --bg-elevated:     #182431;
   --text-primary:    #F7F2E8;
-  --text-secondary:  rgba(247, 242, 232, 0.76);
-  --text-muted:      rgba(247, 242, 232, 0.48);
+  --text-secondary:  rgba(247, 242, 232, 0.82);
+  --text-muted:      rgba(247, 242, 232, 0.68);
   --border-color:    rgba(212, 176, 88, 0.18);
   --card-bg:         #111A23;
   --nav-bg:          rgba(11, 17, 23, 0.94);

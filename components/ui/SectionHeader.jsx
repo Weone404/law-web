@@ -13,8 +13,8 @@ export default function SectionHeader({ eyebrow, title, subtitle }) {
         <div style={{
           display: 'inline-block', fontFamily: 'var(--font-body)',
           fontSize: 11, letterSpacing: '0.3em', textTransform: 'uppercase',
-          color: 'var(--gold-primary)', marginBottom: 16,
-          padding: '4px 16px', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 20,
+          color: isDark ? '#E4C77A' : 'var(--gold-primary)', marginBottom: 16,
+          padding: '4px 16px', border: `1px solid ${isDark ? 'rgba(201,168,76,0.3)' : 'rgba(20,24,32,0.2)'}`, borderRadius: 20,
         }}>{eyebrow}</div>
       )}
       <h2 style={{
@@ -24,7 +24,7 @@ export default function SectionHeader({ eyebrow, title, subtitle }) {
       {subtitle && (
         <p style={{
           fontFamily: 'var(--font-body)', fontSize: 18, lineHeight: 1.7,
-          color: isDark ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.55)',
+          color: isDark ? 'rgba(247, 242, 232, 0.82)' : 'rgba(0,0,0,0.68)',
         }}>{subtitle}</p>
       )}
     </div>
