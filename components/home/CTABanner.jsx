@@ -5,7 +5,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function CTABanner() {
+export default function CTABanner({ title = 'Need Legal Help Today?', description = 'Our expert advocates are ready to assess your case. Get your first consultation within 24 hours.' }) {
   return (
     <section style={{
       padding: '80px 24px',
@@ -19,10 +19,10 @@ export default function CTABanner() {
       <div style={{ maxWidth: 1280, margin: '0 auto', position: 'relative', textAlign: 'center' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 900, color: '#050D1A', marginBottom: 16 }}>
-            Need Legal Help Today?
+            {title}
           </h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 19, color: 'rgba(5,13,26,0.75)', marginBottom: 36, maxWidth: 560, margin: '0 auto 36px' }}>
-            Our expert advocates are ready to assess your case. Get your first consultation within 24 hours.
+            {description}
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{

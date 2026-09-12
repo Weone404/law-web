@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { LAW_UPDATES } from '@/lib/constants/lawUpdates';
 import { PRACTICE_AREAS, CITIES } from '@/lib/constants/seoLandingPages';
+import { CRIMINAL_DELHI_PAGES } from '@/components/criminal/pages';
 
 const SITE_URL = 'https://www.legalgroup.in';
 
@@ -76,6 +77,10 @@ function getEntries() {
     const modified = lastModified('app/services/[slug]/page.jsx');
     CITIES.forEach(({ slug }) => entries.push({ url: `/services/lawyers-in-${encodeURIComponent(slug)}`, lastModified: modified }));
   }
+  const criminalPageModified = lastModified('app/services/criminal-law/[page]/page.jsx');
+  Object.values(CRIMINAL_DELHI_PAGES).forEach(({ path: pagePath }) => {
+    entries.push({ url: pagePath, lastModified: criminalPageModified });
+  });
 
   return entries.filter((entry, index, all) =>
     all.findIndex((candidate) => candidate.url === entry.url) === index

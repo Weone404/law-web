@@ -52,7 +52,7 @@ export default function Navigation() {
   useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   const navBg = scrolled
-    ? isDark ? 'rgba(5,13,26,0.96)' : 'rgba(248,246,240,0.96)'
+    ? isDark ? 'rgba(5,13,26,0.6)' : 'rgba(248,246,240,0.6)'
     : isDark ? 'transparent' : 'rgba(248,246,240,0.96)';
 
   return (
