@@ -58,6 +58,14 @@ export default function DelhiCriminalLanding({ page }) {
           { '@type': 'ListItem', position: 4, name: page.title, item: url },
         ],
       },
+      {
+        '@type': 'FAQPage',
+        mainEntity: page.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      },
     ],
   };
 
@@ -75,7 +83,9 @@ export default function DelhiCriminalLanding({ page }) {
             </nav>
             <div style={{ display: 'inline-block', border: '1px solid rgba(201,168,76,0.35)', borderRadius: 20, padding: '6px 16px', color: 'var(--gold-light)', fontFamily: 'var(--font-body)', fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase' }}>● Criminal Law · Delhi NCR</div>
             <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(38px, 6vw, 72px)', lineHeight: 1.1, maxWidth: 850, margin: '24px 0 22px', color: 'var(--dark-ink)' }}>{page.h1}</h1>
-            <p style={{ maxWidth: 680, color: 'rgba(247,242,232,0.82)', fontFamily: 'var(--font-body)', fontSize: 20, lineHeight: 1.7, marginBottom: 34 }}>{page.hero}</p>
+            <div style={{ maxWidth: 720, color: 'rgba(247,242,232,0.82)', fontFamily: 'var(--font-body)', fontSize: 20, lineHeight: 1.7, marginBottom: 34 }}>
+              {(Array.isArray(page.hero) ? page.hero : [page.hero]).map((paragraph) => <p key={paragraph} style={{ marginBottom: 14 }}>{paragraph}</p>)}
+            </div>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 62 }}>
               <Link href="/contact" className="lex-btn lex-btn-primary" style={{ textDecoration: 'none', fontSize: 16 }}>📞 Book Free Consultation</Link>
               <a href="#advocates" className="lex-btn lex-btn-outline" style={{ textDecoration: 'none', fontSize: 16 }}>⚖️ View Delhi Advocates</a>
@@ -110,6 +120,73 @@ export default function DelhiCriminalLanding({ page }) {
             <div className="responsive-grid-3" style={{ marginTop: 52 }}>{lawyers.map((lawyer) => <LawyerCard key={lawyer.name} lawyer={lawyer} headingLevel={3} />)}</div>
           </div>
         </section>
+
+        {page.caseTypes && (
+          <section style={{ padding: '92px 24px', background: 'var(--bg-primary)' }}>
+            <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+              <SectionHeader eyebrow={page.caseTypes.eyebrow} title={page.caseTypes.title} />
+              <div className="responsive-grid-3" style={{ marginTop: 48 }}>
+                {page.caseTypes.items.map((item) => <Card key={item} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}><span style={{ color: 'var(--gold-primary)', fontSize: 22 }}>✓</span><p style={{ color: 'var(--text-secondary)', fontSize: 17 }}>{item}</p></Card>)}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {page.courts && (
+          <section style={{ padding: '92px 24px', background: 'var(--bg-secondary)' }}>
+            <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+              <SectionHeader eyebrow={page.courts.eyebrow} title={page.courts.title} subtitle={page.courts.intro} />
+              <div className="responsive-grid-3" style={{ marginTop: 48 }}>
+                {page.courts.items.map((item) => <Card key={item}><h3 style={{ color: 'var(--text-primary)', fontSize: 19 }}>{item}</h3></Card>)}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {page.actionSteps && (
+          <section style={{ padding: '92px 24px', background: 'var(--bg-primary)' }}>
+            <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+              <SectionHeader eyebrow={page.actionSteps.eyebrow} title={page.actionSteps.title} subtitle={page.actionSteps.intro} />
+              <div style={{ display: 'grid', gap: 16, marginTop: 48 }}>
+                {page.actionSteps.items.map((item, index) => <Card key={item.title} style={{ display: 'flex', gap: 20, alignItems: 'flex-start' }}><div style={{ flexShrink: 0, width: 42, height: 42, borderRadius: '50%', background: 'var(--gold-primary)', color: '#050D1A', display: 'grid', placeItems: 'center', fontFamily: 'var(--font-heading)', fontWeight: 800 }}>{index + 1}</div><div><h3 style={{ color: 'var(--text-primary)', fontSize: 20, marginBottom: 6 }}>{item.title}</h3><p style={{ color: 'var(--text-secondary)', fontSize: 16 }}>{item.text}</p></div></Card>)}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {page.quashing && (
+          <section style={{ padding: '92px 24px', background: 'var(--bg-secondary)' }}>
+            <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+              <SectionHeader eyebrow={page.quashing.eyebrow} title={page.quashing.title} subtitle={page.quashing.intro} />
+              <div className="responsive-grid-3" style={{ marginTop: 48 }}>
+                {page.quashing.items.map((item) => <Card key={item} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}><span style={{ color: 'var(--gold-primary)', fontSize: 22 }}>✓</span><p style={{ color: 'var(--text-secondary)', fontSize: 17 }}>{item}</p></Card>)}
+              </div>
+              <p style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-body)', fontSize: 17, lineHeight: 1.7, marginTop: 28 }}>{page.quashing.note}</p>
+            </div>
+          </section>
+        )}
+
+        {page.whyChoose && (
+          <section style={{ padding: '92px 24px', background: 'var(--bg-primary)' }}>
+            <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+              <SectionHeader eyebrow={page.whyChoose.eyebrow} title={page.whyChoose.title} />
+              <div className="responsive-grid-3" style={{ marginTop: 48 }}>
+                {page.whyChoose.items.map((item) => <Card key={item} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}><span style={{ color: 'var(--gold-primary)', fontSize: 22 }}>✓</span><p style={{ color: 'var(--text-secondary)', fontSize: 17 }}>{item}</p></Card>)}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {page.comparison && (
+          <section style={{ padding: '92px 24px', background: 'var(--bg-secondary)' }}>
+            <div style={{ maxWidth: 900, margin: '0 auto' }}>
+              <SectionHeader eyebrow={page.comparison.eyebrow} title={page.comparison.title} />
+              <Card style={{ marginTop: 44 }}>
+                {page.comparison.paragraphs.map((paragraph) => <p key={paragraph} style={{ color: 'var(--text-secondary)', fontSize: 18, marginBottom: 16 }}>{paragraph}</p>)}
+              </Card>
+            </div>
+          </section>
+        )}
 
         <section style={{ padding: '92px 24px', background: 'var(--bg-primary)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>

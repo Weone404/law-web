@@ -6,6 +6,7 @@ import { SITE_URL, BRAND_NAME, createMetadata, OFFICES } from '@/lib/seo';
 import { PRACTICE_AREAS } from '@/lib/constants/seoLandingPages';
 import { CITIES } from '@/lib/constants/seoLandingPages';
 import { LAWYERS } from '@/lib/constants/lawyers';
+import CriminalLawHub from '@/components/criminal/CriminalLawHub';
 
 export const dynamicParams = false;
 
@@ -24,6 +25,10 @@ export function generateMetadata({ params }) {
     description: `Find experienced lawyers in ${city.name} for criminal, corporate, family, property and civil law consultations through ${BRAND_NAME}.`,
   });
   if (!area) return {};
+  if (area.slug === 'criminal-law') return createMetadata('/services/criminal-law', {
+    title: 'Criminal Lawyer in India | Bail, Trial & Defence | legalgroup',
+    description: 'Consult experienced criminal lawyers in India for FIR, bail, anticipatory bail, trial and appeals. Advocates across Delhi, Mumbai, Bangalore & more.',
+  });
   return createMetadata(`/services/${area.slug}`, {
     title: `${area.label} Lawyer in India | ${BRAND_NAME}`,
     description: `${area.description} Consult experienced ${area.keyword} through ${BRAND_NAME}.`,
@@ -53,6 +58,7 @@ export default function PracticeAreaPage({ params }) {
     );
   }
   if (!area) notFound();
+  if (area.slug === 'criminal-law') return <CriminalLawHub />;
   const lawyers = LAWYERS.filter((lawyer) => lawyer.area === area.area);
   const url = `${SITE_URL}/services/${area.slug}`;
   const schema = {
