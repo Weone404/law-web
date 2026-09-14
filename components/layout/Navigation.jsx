@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'For Students', href: '/students' },
   { label: 'Legal Services', href: '/services' },
+  { label: 'Court Services', href: '/court-services' },
   { label: 'Our Firm', href: '/firm' },
   { label: 'Indian Laws', href: '/laws' },
   { label: 'Contact', href: '/contact' },
@@ -56,7 +57,7 @@ export default function Navigation() {
     : isDark ? 'transparent' : 'rgba(248,246,240,0.96)';
 
   return (
-    <nav style={{
+    <nav className="site-nav" style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
       background: navBg,
       backdropFilter: scrolled ? 'blur(24px)' : 'none',
@@ -64,12 +65,12 @@ export default function Navigation() {
       transition: 'all 0.4s ease',
       padding: '0 24px',
     }}>
-      <div style={{
+      <div className="nav-inner" style={{
         maxWidth: 1280, margin: '0 auto', height: 72,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         {/* Logo */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }} data-cursor="scale">
+        <Link className="nav-logo" href="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }} data-cursor="scale">
           <div style={{
             width: 40, height: 40, borderRadius: '50%',
             background: 'linear-gradient(135deg, #C9A84C, #8B6914)',
@@ -136,13 +137,21 @@ export default function Navigation() {
             background: 'none', border: 'none', cursor: 'pointer',
             color: 'var(--gold-primary)', fontSize: 24, display: 'none',
           }}
-          aria-label="Toggle menu"
-        >{menuOpen ? '✕' : '☰'}</button>
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+        >
+          <span className="menu-icon" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </button>
       </div>
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div style={{
+        <div id="mobile-navigation" className="mobile-menu" style={{
           background: isDark ? 'var(--bg-primary)' : '#F8F6F0',
           borderTop: '1px solid rgba(201,168,76,0.15)',
           padding: '12px 24px 24px',
@@ -160,6 +169,21 @@ export default function Navigation() {
               }}
             >{link.label}</Link>
           ))}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              width: '100%', padding: '14px 0', marginTop: 4,
+              background: 'none', border: 'none',
+              borderBottom: '1px solid rgba(201,168,76,0.1)',
+              color: 'var(--gold-primary)', fontFamily: 'var(--font-body)', fontSize: 16,
+              textAlign: 'left',
+            }}
+          >
+            <span>{isDark ? 'Light theme' : 'Dark theme'}</span>
+            <span aria-hidden="true">{isDark ? '☀' : '◑'}</span>
+          </button>
           <Link href="/contact" style={{
             display: 'block', marginTop: 16, padding: '13px 0', textAlign: 'center',
             background: 'linear-gradient(135deg,var(--gold-primary),var(--gold-dark))',

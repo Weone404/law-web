@@ -16,6 +16,7 @@ const COLUMNS = [
       { label: 'Home',           href: '/' },
       { label: 'For Students',   href: '/students' },
       { label: 'Legal Services', href: '/services' },
+      { label: 'Court Services', href: '/court-services' },
       { label: 'Our Firm',       href: '/firm' },
     ],
   },

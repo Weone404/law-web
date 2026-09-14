@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { LAW_UPDATES } from '@/lib/constants/lawUpdates';
 import { PRACTICE_AREAS, CITIES } from '@/lib/constants/seoLandingPages';
+import { FAMILY_LAW_SLUGS } from '@/lib/constants/familyLawPages';
+import { CORPORATE_LAW_SLUGS } from '@/lib/constants/corporateLawPages';
 import { CRIMINAL_DELHI_PAGES } from '@/components/criminal/pages';
 
 const SITE_URL = 'https://www.legalgroup.in';
@@ -10,6 +12,14 @@ const PUBLIC_ROUTES = [
   '/',
   '/students',
   '/services',
+  '/court-services',
+  '/court-services/delhi-high-court-advocate',
+  '/court-services/supreme-court-lawyer-delhi',
+  '/court-services/district-court-lawyer-delhi',
+  '/court-services/litigation-lawyer-delhi',
+  '/corporate-law',
+  '/family-law',
+  '/property-law',
   '/firm',
   '/laws',
   '/contact',
@@ -21,6 +31,10 @@ const ROUTE_FILES = {
   '/': 'app/page.jsx',
   '/students': 'app/students/page.jsx',
   '/services': 'app/services/page.jsx',
+  '/court-services': 'app/court-services/page.jsx',
+  '/corporate-law': 'app/corporate-law/page.jsx',
+  '/family-law': 'app/family-law/page.jsx',
+  '/property-law': 'app/property-law/page.jsx',
   '/firm': 'app/firm/page.jsx',
   '/laws': 'app/laws/page.jsx',
   '/contact': 'app/contact/page.jsx',
@@ -77,6 +91,44 @@ function getEntries() {
     const modified = lastModified('app/services/[slug]/page.jsx');
     CITIES.forEach(({ slug }) => entries.push({ url: `/services/lawyers-in-${encodeURIComponent(slug)}`, lastModified: modified }));
   }
+  if (fs.existsSync(path.join(process.cwd(), 'app', 'services', 'family-law', '[page]', 'page.jsx'))) {
+    const modified = lastModified('app/services/family-law/[page]/page.jsx');
+    FAMILY_LAW_SLUGS.forEach((slug) => entries.push({
+      url: `/services/family-law/${encodeURIComponent(slug)}`,
+      lastModified: modified,
+    }));
+  }
+  if (fs.existsSync(path.join(process.cwd(), 'app', 'family-law', '[page]', 'page.jsx'))) {
+    const modified = lastModified('app/family-law/[page]/page.jsx');
+    FAMILY_LAW_SLUGS.forEach((slug) => entries.push({
+      url: `/family-law/${encodeURIComponent(slug)}`,
+      lastModified: modified,
+    }));
+  }
+  const propertyRoutes = [
+    '/property-lawyer-delhi',
+    '/property-dispute-lawyer-delhi',
+    '/real-estate-lawyer-delhi',
+    '/property-registration-lawyer-delhi',
+  ];
+  propertyRoutes.forEach((url) => entries.push({
+    url,
+    lastModified: lastModified(`app${url}/page.jsx`),
+  }));
+  const corporateRoutes = [
+    '/corporate-lawyer-delhi',
+    '/company-registration-lawyer-delhi',
+    '/business-lawyer-delhi',
+    '/contract-lawyer-delhi',
+  ];
+  corporateRoutes.forEach((url) => entries.push({
+    url,
+    lastModified: lastModified(`app${url}/page.jsx`),
+  }));
+  CORPORATE_LAW_SLUGS.forEach((slug) => entries.push({
+    url: `/${encodeURIComponent(slug)}`,
+    lastModified: lastModified(`app/${encodeURIComponent(slug)}/page.jsx`),
+  }));
   const criminalPageModified = lastModified('app/services/criminal-law/[page]/page.jsx');
   Object.values(CRIMINAL_DELHI_PAGES).forEach(({ path: pagePath }) => {
     entries.push({ url: pagePath, lastModified: criminalPageModified });

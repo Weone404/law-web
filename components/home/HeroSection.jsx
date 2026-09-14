@@ -30,7 +30,7 @@ export default function HeroSection() {
   });
 
   return (
-    <section style={{
+    <section className="home-hero" style={{
       minHeight: '100vh', position: 'relative', overflow: 'hidden',
       display: 'flex', alignItems: 'center',
       background: isDark
@@ -102,7 +102,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTAs */}
-        <div style={{ ...fade(0.45), display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 80 }}>
+        <div className="hero-ctas" style={{ ...fade(0.45), display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 80 }}>
           {[
             { label: 'For Law Students', icon: '📚', href: '/students', primary: true },
             { label: 'Hire a Lawyer', icon: '⚖️', href: '/services' },
