@@ -16,6 +16,7 @@ export const metadata = createMetadata('/sitemap', {
 const MAIN_PAGES = [
   ['Home', '/'],
   ['For Students', '/students'],
+  ['Legal Blogs', '/blogs'],
   ['Legal Services', '/services'],
   ['Court Services', '/court-services'],
   ['Corporate Law', '/corporate-law'],

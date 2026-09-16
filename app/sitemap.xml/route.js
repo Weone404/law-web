@@ -11,7 +11,10 @@ const SITE_URL = 'https://www.legalgroup.in';
 const PUBLIC_ROUTES = [
   '/',
   '/students',
+  '/blogs',
   '/services',
+  '/search',
+  '/sitemap',
   '/court-services',
   '/court-services/delhi-high-court-advocate',
   '/court-services/supreme-court-lawyer-delhi',
@@ -30,7 +33,10 @@ const PUBLIC_ROUTES = [
 const ROUTE_FILES = {
   '/': 'app/page.jsx',
   '/students': 'app/students/page.jsx',
+  '/blogs': 'app/blogs/page.jsx',
   '/services': 'app/services/page.jsx',
+  '/search': 'app/search/page.jsx',
+  '/sitemap': 'app/sitemap/page.jsx',
   '/court-services': 'app/court-services/page.jsx',
   '/corporate-law': 'app/corporate-law/page.jsx',
   '/family-law': 'app/family-law/page.jsx',

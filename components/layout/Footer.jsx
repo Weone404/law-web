@@ -26,7 +26,7 @@ const COLUMNS = [
       { label: 'Indian Laws',   href: '/laws' },
       { label: 'Bare Acts',     href: '/laws' },
       { label: 'Case Laws',     href: '/students' },
-      { label: 'Legal Blog',    href: '/students' },
+      { label: 'Legal Blogs',   href: '/blogs' },
     ],
   },
   {
