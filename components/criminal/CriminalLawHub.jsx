@@ -74,7 +74,7 @@ export default function CriminalLawHub() {
             </div>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 62 }}><Link href="/contact" className="lex-btn lex-btn-primary" style={{ textDecoration: 'none', fontSize: 16 }}>⚖️ Book a Free Consultation</Link><Link href="/services" className="lex-btn lex-btn-outline" style={{ textDecoration: 'none', fontSize: 16 }}>📞 Talk to a Criminal Lawyer Today</Link></div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid rgba(201,168,76,0.2)', paddingTop: 28 }} className="stats-grid">
-              {[['2,400+', 'Cases Won'], ['15+', 'Years Experience'], ['98%', 'Client Satisfaction']].map(([value, label]) => <div key={label} style={{ padding: '0 16px' }}><div style={{ color: 'var(--gold-light)', fontFamily: 'var(--font-heading)', fontSize: 32, fontWeight: 800 }}>{value}</div><div style={{ color: 'rgba(247,242,232,0.7)', fontFamily: 'var(--font-body)', fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase' }}>{label}</div></div>)}
+              {[['Legal review', 'Document-first advice'], ['Practice areas', 'Bail, trial, FIR, appeals'], ['Response', 'Initial consultation']].map(([value, label]) => <div key={label} style={{ padding: '0 16px' }}><div style={{ color: 'var(--gold-light)', fontFamily: 'var(--font-heading)', fontSize: 32, fontWeight: 800 }}>{value}</div><div style={{ color: 'rgba(247,242,232,0.7)', fontFamily: 'var(--font-body)', fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase' }}>{label}</div></div>)}
             </div>
           </div>
         </section>

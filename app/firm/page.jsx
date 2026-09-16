@@ -20,7 +20,7 @@ const MVV = [
   {
     icon: '🔭',
     title: 'Our Vision',
-    text: 'To be India\'s most trusted legal institution, pioneering the intersection of legal expertise and modern technology to reshape how justice is delivered.',
+    text: 'To make legal information and legal support more accessible, clearer, and more practical for Indian clients navigating real-world disputes and decisions.',
   },
   {
     icon: '🤝',
@@ -30,19 +30,18 @@ const MVV = [
 ];
 
 const VALUES = [
-  { icon: '⚖️', title: 'Integrity First',    desc: 'We uphold the highest ethical standards in every case we handle. Justice begins with honesty.' },
-  { icon: '🎯', title: 'Client-Centered',    desc: 'Your legal goals are our mission. We tailor our strategy to your unique situation and objectives.' },
-  { icon: '🏆', title: 'Proven Track Record', desc: 'Over 2,400 successfully resolved cases across the Supreme Court, High Courts, and Tribunals.' },
-  { icon: '🔬', title: 'Research-Driven',    desc: 'Every argument we build rests on deep legal research and intimate knowledge of Indian jurisprudence.' },
-  { icon: '🌐', title: 'Pan-India Presence', desc: 'Offices in Delhi, Mumbai, and Bangalore — with associate counsel in every High Court state.' },
-  { icon: '🔒', title: 'Absolute Confidentiality', desc: 'Attorney-client privilege is sacrosanct. Your matters remain strictly confidential, always.' },
+  { icon: '⚖️', title: 'Integrity First',    desc: 'We uphold the highest ethical standards in every matter we handle. Justice begins with honesty.' },
+  { icon: '🎯', title: 'Client-Centered',    desc: 'Your legal goals are our focus. We tailor our approach to your situation and priorities.' },
+  { icon: '🔬', title: 'Research-Driven',    desc: 'We review facts, legal context, and procedural options before recommending the next step.' },
+  { icon: '🌐', title: 'Pan-India Support', desc: 'LegalGroup supports clients across major Indian cities and practice areas with practical guidance.' },
+  { icon: '🔒', title: 'Confidentiality', desc: 'We handle consultations and legal discussions with care and professional discretion.' },
 ];
 
 const TEAM = [
-  { name: 'Sr. Adv. Raghunath Krishnamurthy', title: 'Founder & Managing Partner', exp: '32 Years', icon: '👨‍⚖️', specialization: 'Constitutional & Supreme Court Practice' },
-  { name: 'Adv. Lakshmi Venkatesh',           title: 'Senior Partner',             exp: '24 Years', icon: '👩‍⚖️', specialization: 'Corporate & Commercial Law' },
-  { name: 'Adv. Anand Mehrotra',              title: 'Partner — Litigation',        exp: '18 Years', icon: '👨‍⚖️', specialization: 'Criminal Defence & Bail Matters' },
-  { name: 'Adv. Deepika Pillai',              title: 'Partner — Advisory',          exp: '15 Years', icon: '👩‍⚖️', specialization: 'Family Law & Mediation' },
+  { name: 'LegalGroup Team', title: 'Advocacy & Advisory', icon: '👨‍⚖️', specialization: 'Criminal, family, corporate, property and civil law support' },
+  { name: 'LegalGroup Counsel', title: 'Litigation Support', icon: '👩‍⚖️', specialization: 'Representation and strategic review for Indian legal matters' },
+  { name: 'LegalGroup Advisory Group', title: 'Legal Research & Drafting', icon: '👨‍⚖️', specialization: 'Drafting, review and case preparation across practice areas' },
+  { name: 'LegalGroup Client Support', title: 'Consultation & Guidance', icon: '👩‍⚖️', specialization: 'Client-first legal advice and process guidance' },
 ];
 
 export default function FirmPage() {
@@ -78,23 +77,22 @@ export default function FirmPage() {
                 padding: '5px 16px', marginBottom: 24,
                 color: 'var(--gold-primary)', fontFamily: 'var(--font-body)',
                 fontSize: 12, letterSpacing: '0.25em', textTransform: 'uppercase',
-              }}>Est. 2009 · New Delhi</span>
+              }}>India • Legal Services</span>
             </motion.div>
 
             <motion.h1 variants={fadeUp} style={{
               fontFamily: 'var(--font-heading)', fontSize: 'clamp(36px,5.5vw,68px)',
               color: '#fff', fontWeight: 900, lineHeight: 1.1, marginBottom: 24,
             }}>
-              legalgroup<br />
-              <span style={{ color: 'var(--gold-primary)' }}>Law Chambers</span>
+              LegalGroup<br />
+              <span style={{ color: 'var(--gold-primary)' }}>Legal Services</span>
             </motion.h1>
 
             <motion.p variants={fadeUp} style={{
               fontFamily: 'var(--font-body)', fontSize: 20,
               color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: 560,
             }}>
-              A full-service law firm built on decades of dedication to Indian jurisprudence,
-              representing individuals to Fortune 500 companies across every tier of the judicial system.
+              LegalGroup helps individuals and businesses navigate legal questions with practical consultation, drafting, research, and representation across major practice areas.
             </motion.p>
           </motion.div>
         </div>
@@ -170,7 +168,7 @@ export default function FirmPage() {
                 background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.3)',
                 borderRadius: 20, padding: '3px 12px',
                 fontFamily: 'var(--font-body)', fontSize: 12, color: 'var(--gold-primary)',
-              }}>{member.exp} Experience</span>
+              }}>{member.title}</span>
             </motion.div>
           ))}
         </div>

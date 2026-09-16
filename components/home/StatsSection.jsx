@@ -6,10 +6,10 @@ import { motion } from 'framer-motion';
 import { useTheme } from '@/hooks/useTheme';
 
 const STATS = [
-  { value: '2,400+', label: 'Cases Successfully Resolved', icon: '⚖️' },
-  { value: '15+', label: 'Years of Combined Excellence', icon: '🏛️' },
-  { value: '180+', label: 'Law Students Mentored', icon: '📚' },
-  { value: '98%', label: 'Client Satisfaction Rate', icon: '🌟' },
+  { value: 'Legal review', label: 'Document-first guidance', icon: '⚖️' },
+  { value: 'Practice areas', label: 'Civil, criminal, family, corporate', icon: '🏛️' },
+  { value: 'Plain language', label: 'Clear next steps', icon: '📚' },
+  { value: 'Consultation', label: 'Confidential legal support', icon: '🌟' },
 ];
 
 export default function StatsSection() {

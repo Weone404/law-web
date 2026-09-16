@@ -7,9 +7,9 @@ import { BRAND_NAME, OFFICES, SITE_URL } from '@/lib/seo';
 import { LAWYERS } from '@/lib/constants/lawyers';
 
 const STATS = [
-  { value: '2,400+', label: 'Cases Won' },
-  { value: '15+', label: 'Years Experience' },
-  { value: '98%', label: 'Client Satisfaction' },
+  { value: 'Legal review', label: 'Document-first advice' },
+  { value: 'Practice areas', label: 'Bail, FIR, trial, appeals' },
+  { value: 'Response', label: 'Initial consultation' },
 ];
 
 const RELATED = [

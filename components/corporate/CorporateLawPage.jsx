@@ -164,9 +164,9 @@ export default function CorporateLawPage({ page, isOverview = false, basePath = 
             <SectionHeader eyebrow="Trust and credibility" title="Professional legal support you can depend on" subtitle="A well-structured legal relationship reduces friction, protects commercial decisions and helps you move forward with clarity." />
             <div className="responsive-grid-4" style={{ marginTop: 52 }}>
               {[
-                ['2,400+', 'Cases handled'],
-                ['15+', 'Years of experience'],
-                ['98%', 'Client satisfaction'],
+                ['Business review', 'Document-first advisory'],
+                ['Practice areas', 'Contracts, compliance, governance'],
+                ['Clear process', 'Facts before action'],
                 ['24/7', 'Consultation response']
               ].map(([value, label]) => (
                 <Card key={label} style={{ textAlign: 'center' }}>

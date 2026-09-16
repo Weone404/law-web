@@ -16,7 +16,7 @@ const PROPERTY_LAW_OVERVIEW = {
   shortTitle: 'Property Law',
   badge: '● Property counsel for Delhi transactions and disputes',
   subtitle: 'Legal support for title review, property documentation, sale transactions, ownership disputes, registration and builder-related concerns across Delhi and India.',
-  stats: [['4', 'Core property services'], ['6', 'Delhi courts'], ['15+', 'Years property-law experience']],
+  stats: [['Property review', 'Document-first advisory'], ['Practice areas', 'Title, disputes, transactions'], ['Court process', 'Procedure before filing']],
   explainerTitle: 'What Property Law Covers',
   services: [
     ['Property ownership and title review', 'Assessing ownership, title records, encumbrances and risk before purchase, transfer or litigation.'],

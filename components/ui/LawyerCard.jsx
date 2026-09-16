@@ -40,14 +40,15 @@ export default function LawyerCard({ lawyer, headingLevel = 3 }) {
         </div>
 
         {/* Metrics */}
-        <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
-          {[{ label: 'Exp.', val: lawyer.exp }, { label: 'Cases', val: lawyer.cases }, { label: 'Rating', val: `⭐ ${lawyer.rating}` }].map((m, j) => (
-            <div key={j} style={{ flex: 1, textAlign: 'center', background: isDark ? 'rgba(255,255,255,0.03)' : '#F8F6F0', borderRadius: 8, padding: '10px 4px' }}>
-              <div style={{ fontFamily: 'var(--font-heading)', fontSize: 15, fontWeight: 700, color: 'var(--gold-primary)' }}>{m.val}</div>
-              <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'var(--text-meta)', marginTop: 2 }}>{m.label}</div>
-            </div>
-          ))}
-        </div>
+        {lawyer.courts?.length > 0 && (
+          <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
+            {lawyer.courts.slice(0, 2).map((court, index) => (
+              <div key={`${court}-${index}`} style={{ flex: '1 1 120px', textAlign: 'center', background: isDark ? 'rgba(255,255,255,0.03)' : '#F8F6F0', borderRadius: 8, padding: '10px 8px' }}>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: 12, color: 'var(--text-meta)', marginTop: 2 }}>{court}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <button
           onClick={() => setShowModal(true)}
@@ -64,7 +65,7 @@ export default function LawyerCard({ lawyer, headingLevel = 3 }) {
       {showModal && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', zIndex: 5000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }} onClick={() => setShowModal(false)}>
           <div style={{ background: '#0A1628', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 16, padding: '40px', maxWidth: 440, width: '100%' }} onClick={(e) => e.stopPropagation()}>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, color: '#F0E8D0', marginBottom: 8 }}>Book with {lawyer.name.split(' ').slice(-1)[0]}</h3>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: 22, color: '#F0E8D0', marginBottom: 8 }}>Book this counsel</h3>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: 'rgba(255,255,255,0.55)', marginBottom: 24 }}>{lawyer.specialization}</p>
             <a href="/contact" style={{ display: 'block', textAlign: 'center', background: 'linear-gradient(135deg,var(--gold-primary),var(--gold-dark))', padding: '13px', borderRadius: 8, fontFamily: 'var(--font-body)', fontSize: 15, fontWeight: 700, color: '#050D1A', textDecoration: 'none' }}>
               Continue to Booking →

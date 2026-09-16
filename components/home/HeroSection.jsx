@@ -10,10 +10,10 @@ import Link from 'next/link';
 import { useTheme } from '@/hooks/useTheme';
 
 const STATS = [
-  { value: '2,400+', label: 'Cases Won' },
-  { value: '15+', label: 'Years Experience' },
-  { value: '180+', label: 'Students Trained' },
-  { value: '98%', label: 'Client Satisfaction' },
+  { value: 'Legal review', label: 'Document-led advice' },
+  { value: 'Practice areas', label: 'Civil, criminal, family, corporate' },
+  { value: 'Plain language', label: 'Clear legal guidance' },
+  { value: 'Consultation', label: 'Starting point for action' },
 ];
 
 export default function HeroSection() {
@@ -73,7 +73,7 @@ export default function HeroSection() {
             borderRadius: 20, padding: '6px 18px',
             fontFamily: 'var(--font-body)', fontSize: 12, letterSpacing: '0.22em',
             textTransform: 'uppercase', color: 'var(--gold-primary)',
-          }}>● Trusted Legal Excellence Since 2009</span>
+          }}>● Practical legal guidance</span>
         </div>
 
         {/* Headline */}
@@ -96,9 +96,8 @@ export default function HeroSection() {
           color: isDark ? 'rgba(247, 242, 232, 0.82)' : 'rgba(0,0,0,0.68)',
           maxWidth: 560, marginBottom: 44,
         }}>
-          India's premier legal platform connecting law students, practicing lawyers,
-          and clients seeking justice — all in one unified ecosystem. Our legal expertise
-          helps people understand their options and pursue justice with confidence.
+          We help people understand their legal options, review the relevant facts,
+          and choose a sensible next step before taking action.
         </p>
 
         {/* CTAs */}

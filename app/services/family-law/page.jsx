@@ -16,7 +16,7 @@ const FAMILY_LAW_OVERVIEW = {
   shortTitle: 'Family Law',
   subtitle: 'Family disputes touch the most personal parts of a client’s life — a marriage, a child, a home or a parent’s welfare. legalgroup provides clear, confidential guidance across India, with dedicated support in New Delhi.',
   explainerTitle: 'What Falls Under Family Law',
-  stats: [['5', 'Focused Delhi services'], ['6', 'Delhi Family Courts'], ['16+', 'Years family-law experience']],
+  stats: [['Family review', 'Document-first consultation'], ['Practice areas', 'Divorce, custody, maintenance'], ['Court process', 'Procedure before filing']],
   reasons: [
     ['⚖️', 'Dedicated family-law experience', 'Advocates with family-court experience, not general litigators handling matrimonial matters as a side practice.'],
     ['🤝', 'Support at every stage', 'From the first consultation and drafting through mediation, hearings and, where needed, appeal.'],

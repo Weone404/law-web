@@ -3,16 +3,17 @@
  * Practical legal analysis and Indian law updates for clients, lawyers, and students.
  */
 
+import Link from 'next/link';
 import PageHeader from '@/components/ui/PageHeader';
 import ResourceCard from '@/components/ui/ResourceCard';
 import JsonLd from '@/components/seo/JsonLd';
-import { STUDENT_RESOURCES } from '@/lib/constants/studentResources';
+import { LEGAL_GUIDE_INDEX } from '@/lib/constants/legalGuides';
 import { BRAND_NAME, SITE_URL, createMetadata } from '@/lib/seo';
 
 export const metadata = createMetadata('/blogs');
 
 export default function BlogsPage() {
-  const blogs = STUDENT_RESOURCES.blogs;
+  const blogs = LEGAL_GUIDE_INDEX;
 
   return (
     <div className="dark-gold-surface" style={{ minHeight: '100vh', paddingTop: 72, background: 'var(--dark-bg)' }}>
@@ -44,7 +45,9 @@ export default function BlogsPage() {
 
         <div className="responsive-grid-3">
           {blogs.map((blog) => (
-            <ResourceCard key={blog.title} item={blog} headingLevel={3} />
+            <Link key={blog.slug} href={`/blogs/${blog.slug}`} style={{ textDecoration: 'none' }}>
+              <ResourceCard item={blog} headingLevel={3} />
+            </Link>
           ))}
         </div>
       </section>
