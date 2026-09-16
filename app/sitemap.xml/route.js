@@ -1,148 +1,61 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { LAW_UPDATES } from '@/lib/constants/lawUpdates';
+import { SITE_URL } from '@/lib/seo';
 import { PRACTICE_AREAS, CITIES } from '@/lib/constants/seoLandingPages';
+import { LAW_UPDATES } from '@/lib/constants/lawUpdates';
+import { LEGAL_GUIDES } from '@/lib/constants/legalGuides';
 import { FAMILY_LAW_SLUGS } from '@/lib/constants/familyLawPages';
-import { CORPORATE_LAW_SLUGS } from '@/lib/constants/corporateLawPages';
+import { COURT_SERVICE_SLUGS } from '@/lib/constants/courtServicePages';
 import { CRIMINAL_DELHI_PAGES } from '@/components/criminal/pages';
 
-const SITE_URL = 'https://www.legalgroup.in';
+const CANONICAL_ORIGIN = SITE_URL;
 
-const PUBLIC_ROUTES = [
+if (CANONICAL_ORIGIN !== 'https://www.legalgroup.in') {
+  throw new Error(`Unexpected sitemap origin: ${CANONICAL_ORIGIN}`);
+}
+
+const STATIC_PAGES = [
   '/',
-  '/students',
-  '/blogs',
   '/services',
-  '/search',
-  '/sitemap',
-  '/court-services',
-  '/court-services/delhi-high-court-advocate',
-  '/court-services/supreme-court-lawyer-delhi',
-  '/court-services/district-court-lawyer-delhi',
-  '/court-services/litigation-lawyer-delhi',
-  '/corporate-law',
-  '/family-law',
-  '/property-law',
+  '/blogs',
   '/firm',
   '/laws',
   '/contact',
+  '/students',
+  '/lawyers',
+  '/locations',
   '/privacy-policy',
   '/terms-of-use',
+  '/court-services',
 ];
 
-const ROUTE_FILES = {
-  '/': 'app/page.jsx',
-  '/students': 'app/students/page.jsx',
-  '/blogs': 'app/blogs/page.jsx',
-  '/services': 'app/services/page.jsx',
-  '/search': 'app/search/page.jsx',
-  '/sitemap': 'app/sitemap/page.jsx',
-  '/court-services': 'app/court-services/page.jsx',
-  '/corporate-law': 'app/corporate-law/page.jsx',
-  '/family-law': 'app/family-law/page.jsx',
-  '/property-law': 'app/property-law/page.jsx',
-  '/firm': 'app/firm/page.jsx',
-  '/laws': 'app/laws/page.jsx',
-  '/contact': 'app/contact/page.jsx',
-  '/privacy-policy': 'app/privacy-policy/page.jsx',
-  '/terms-of-use': 'app/terms-of-use/page.jsx',
-};
+function getCanonicalPaths() {
+  const practicePages = PRACTICE_AREAS.map((area) => `/services/${area.slug}`);
+  const cityServicePages = CITIES.map((city) => `/services/lawyers-in-${city.slug}`);
+  const criminalServicePages = Object.values(CRIMINAL_DELHI_PAGES).map((page) => page.path);
+  const familyServicePages = FAMILY_LAW_SLUGS.map((slug) => `/services/family-law/${slug}`);
+  const courtServicePages = COURT_SERVICE_SLUGS.map((slug) => `/court-services/${slug}`);
+  const lawPages = LAW_UPDATES.map((law) => `/laws/${law.id}`);
+  const cityPages = CITIES.map((city) => `/locations/${city.slug}`);
+  const blogPages = LEGAL_GUIDES.map((guide) => `/blogs/${guide.slug}`);
 
-function lastModified(relativeFile) {
-  try {
-    return fs.statSync(path.join(process.cwd(), relativeFile)).mtime.toISOString();
-  } catch {
-    return undefined;
-  }
+  return [...new Set([
+    ...STATIC_PAGES,
+    ...practicePages,
+    ...cityServicePages,
+    ...criminalServicePages,
+    ...familyServicePages,
+    ...courtServicePages,
+    ...lawPages,
+    ...cityPages,
+    ...blogPages,
+  ])];
 }
 
-function hasDynamicRoute(directory) {
-  return ['[id]', '[slug]'].some((segment) =>
-    ['page.js', 'page.jsx', 'page.ts', 'page.tsx'].some((file) =>
-      fs.existsSync(path.join(process.cwd(), 'app', directory, segment, file))
-    )
-  );
-}
-
-function addRecords(records, basePath, data, sourceFile) {
-  if (!hasDynamicRoute(basePath)) return;
-
-  const modified = lastModified(sourceFile);
-  data.forEach((record) => {
-    const identifier = record.slug || record.id;
-    if (!identifier) return;
-    records.push({
-      url: `${basePath}/${encodeURIComponent(identifier)}`,
-      lastModified: modified,
-    });
-  });
-}
-
-function getEntries() {
-  const entries = PUBLIC_ROUTES.map((url) => ({
-    url,
-    lastModified: lastModified(ROUTE_FILES[url]),
-  }));
-
-  addRecords(entries, '/laws', LAW_UPDATES, 'lib/constants/lawUpdates.js');
-  if (fs.existsSync(path.join(process.cwd(), 'app', 'laws', '[id]', 'page.jsx'))) {
-    const modified = lastModified('app/laws/[id]/page.jsx');
-    LAW_UPDATES.forEach(({ id }) => entries.push({ url: `/laws/${encodeURIComponent(id)}`, lastModified: modified }));
+function toCanonicalUrl(pathname) {
+  const url = new URL(pathname, `${CANONICAL_ORIGIN}/`);
+  if (url.origin !== CANONICAL_ORIGIN) {
+    throw new Error(`Sitemap path resolved outside the canonical origin: ${pathname}`);
   }
-  if (fs.existsSync(path.join(process.cwd(), 'app', 'services', '[slug]', 'page.jsx'))) {
-    const modified = lastModified('app/services/[slug]/page.jsx');
-    PRACTICE_AREAS.forEach(({ slug }) => entries.push({ url: `/services/${encodeURIComponent(slug)}`, lastModified: modified }));
-  }
-  if (fs.existsSync(path.join(process.cwd(), 'app', 'services', '[slug]', 'page.jsx'))) {
-    const modified = lastModified('app/services/[slug]/page.jsx');
-    CITIES.forEach(({ slug }) => entries.push({ url: `/services/lawyers-in-${encodeURIComponent(slug)}`, lastModified: modified }));
-  }
-  if (fs.existsSync(path.join(process.cwd(), 'app', 'services', 'family-law', '[page]', 'page.jsx'))) {
-    const modified = lastModified('app/services/family-law/[page]/page.jsx');
-    FAMILY_LAW_SLUGS.forEach((slug) => entries.push({
-      url: `/services/family-law/${encodeURIComponent(slug)}`,
-      lastModified: modified,
-    }));
-  }
-  if (fs.existsSync(path.join(process.cwd(), 'app', 'family-law', '[page]', 'page.jsx'))) {
-    const modified = lastModified('app/family-law/[page]/page.jsx');
-    FAMILY_LAW_SLUGS.forEach((slug) => entries.push({
-      url: `/family-law/${encodeURIComponent(slug)}`,
-      lastModified: modified,
-    }));
-  }
-  const propertyRoutes = [
-    '/property-lawyer-delhi',
-    '/property-dispute-lawyer-delhi',
-    '/real-estate-lawyer-delhi',
-    '/property-registration-lawyer-delhi',
-  ];
-  propertyRoutes.forEach((url) => entries.push({
-    url,
-    lastModified: lastModified(`app${url}/page.jsx`),
-  }));
-  const corporateRoutes = [
-    '/corporate-lawyer-delhi',
-    '/company-registration-lawyer-delhi',
-    '/business-lawyer-delhi',
-    '/contract-lawyer-delhi',
-  ];
-  corporateRoutes.forEach((url) => entries.push({
-    url,
-    lastModified: lastModified(`app${url}/page.jsx`),
-  }));
-  CORPORATE_LAW_SLUGS.forEach((slug) => entries.push({
-    url: `/${encodeURIComponent(slug)}`,
-    lastModified: lastModified(`app/${encodeURIComponent(slug)}/page.jsx`),
-  }));
-  const criminalPageModified = lastModified('app/services/criminal-law/[page]/page.jsx');
-  Object.values(CRIMINAL_DELHI_PAGES).forEach(({ path: pagePath }) => {
-    entries.push({ url: pagePath, lastModified: criminalPageModified });
-  });
-
-  return entries.filter((entry, index, all) =>
-    all.findIndex((candidate) => candidate.url === entry.url) === index
-  );
+  return url.toString();
 }
 
 function escapeXml(value) {
@@ -158,18 +71,13 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-function toSiteUrl(pathname) {
-  return new URL(pathname, `${SITE_URL}/`).toString();
-}
-
-export async function GET() {
-  const urls = getEntries()
-    .map(({ url, lastModified }) => `
+export function GET() {
+  const urls = getCanonicalPaths().map((pathname) => `
     <url>
-      <loc>${escapeXml(toSiteUrl(url))}</loc>${lastModified ? `
-      <lastmod>${lastModified}</lastmod>` : ''}
-      <changefreq>${url === '/' ? 'weekly' : 'monthly'}</changefreq>
-      <priority>${url === '/' ? '1.0' : '0.8'}</priority>
+      <loc>${escapeXml(toCanonicalUrl(pathname))}</loc>
+      <lastmod>${new Date().toISOString()}</lastmod>
+      <changefreq>${pathname.includes('/laws/') || pathname.includes('/blogs/') ? 'weekly' : 'monthly'}</changefreq>
+      <priority>${pathname === '/' ? '1.0' : pathname.startsWith('/services/') || pathname.startsWith('/court-services/') ? '0.8' : pathname.startsWith('/laws/') || pathname.startsWith('/blogs/') ? '0.7' : '0.6'}</priority>
     </url>`)
     .join('');
 
