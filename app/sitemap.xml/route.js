@@ -51,6 +51,10 @@ function getCanonicalPaths() {
 }
 
 function toCanonicalUrl(pathname) {
+  if (typeof pathname !== 'string' || !pathname.startsWith('/') || pathname.includes('?') || pathname.includes('#')) {
+    throw new Error(`Invalid sitemap pathname: ${pathname}`);
+  }
+
   const url = new URL(pathname, `${CANONICAL_ORIGIN}/`);
   if (url.origin !== CANONICAL_ORIGIN) {
     throw new Error(`Sitemap path resolved outside the canonical origin: ${pathname}`);
@@ -75,9 +79,6 @@ export function GET() {
   const urls = getCanonicalPaths().map((pathname) => `
     <url>
       <loc>${escapeXml(toCanonicalUrl(pathname))}</loc>
-      <lastmod>${new Date().toISOString()}</lastmod>
-      <changefreq>${pathname.includes('/laws/') || pathname.includes('/blogs/') ? 'weekly' : 'monthly'}</changefreq>
-      <priority>${pathname === '/' ? '1.0' : pathname.startsWith('/services/') || pathname.startsWith('/court-services/') ? '0.8' : pathname.startsWith('/laws/') || pathname.startsWith('/blogs/') ? '0.7' : '0.6'}</priority>
     </url>`)
     .join('');
 
