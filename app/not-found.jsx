@@ -1,8 +1,21 @@
 /**
  * app/not-found.jsx — Custom 404 Page
  */
-'use client';
 import Link from 'next/link';
+
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+  alternates: {
+    canonical: null,
+  },
+};
 
 export default function NotFound() {
   return (

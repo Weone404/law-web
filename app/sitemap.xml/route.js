@@ -17,11 +17,23 @@ const STATIC_PAGES = [
   '/services',
   '/blogs',
   '/firm',
+  '/sitemap',
   '/laws',
   '/contact',
   '/students',
   '/lawyers',
   '/locations',
+  '/family-law',
+  '/corporate-law',
+  '/property-law',
+  '/business-lawyer-delhi',
+  '/company-registration-lawyer-delhi',
+  '/contract-lawyer-delhi',
+  '/corporate-lawyer-delhi',
+  '/property-lawyer-delhi',
+  '/property-dispute-lawyer-delhi',
+  '/real-estate-lawyer-delhi',
+  '/property-registration-lawyer-delhi',
   '/privacy-policy',
   '/terms-of-use',
   '/court-services',
@@ -32,6 +44,7 @@ function getCanonicalPaths() {
   const cityServicePages = CITIES.map((city) => `/services/lawyers-in-${city.slug}`);
   const criminalServicePages = Object.values(CRIMINAL_DELHI_PAGES).map((page) => page.path);
   const familyServicePages = FAMILY_LAW_SLUGS.map((slug) => `/services/family-law/${slug}`);
+  const familyPages = FAMILY_LAW_SLUGS.map((slug) => `/family-law/${slug}`);
   const courtServicePages = COURT_SERVICE_SLUGS.map((slug) => `/court-services/${slug}`);
   const lawPages = LAW_UPDATES.map((law) => `/laws/${law.id}`);
   const cityPages = CITIES.map((city) => `/locations/${city.slug}`);
@@ -43,6 +56,7 @@ function getCanonicalPaths() {
     ...cityServicePages,
     ...criminalServicePages,
     ...familyServicePages,
+    ...familyPages,
     ...courtServicePages,
     ...lawPages,
     ...cityPages,
